@@ -17,16 +17,18 @@ spec:
     - name: https
       containerPort: 443
       protocol: TCP
+    - name: modcluster
+      containerPort: 6666
     volumeMounts:
     - mountPath: /etc/localtime
       name: localtime
 # httpd secret                         ---------------------------------
-  {{- if .Values.image.pullSecrets }}
+#  {{- if .Values.image.pullSecrets }}
   imagePullSecrets:
-  {{- range .Values.image.pullSecrets }}
-  - name: {{ . }}
-  {{- end}}
-  {{- end }}
+#  {{- range .Values.image.pullSecrets }}
+  - name: regcred
+#  {{- end}}
+#  {{- end }}
   volumes:
   - name: localtime
     hostPath:

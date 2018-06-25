@@ -11,9 +11,10 @@ spec:
     - name: https
       port: 443
       targetPort: 443
-      {{- if (and (eq .Values.serviceType "NodePort") (not (empty .Values.nodePorts.https)))}}
-      nodePort: {{ .Values.nodePorts.https }}
-      {{- end }}
+      nodePort: 30111
+#      {{- if (and (eq .Values.serviceType "NodePort") (not (empty .Values.nodePorts.https)))}}
+#      nodePort: {{ .Values.nodePorts.https }}
+#      {{- end }}
   selector:
     app: LaboConnect
 #    app: {{ template "fullname" . }}
