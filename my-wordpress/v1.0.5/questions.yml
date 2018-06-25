@@ -67,6 +67,12 @@ questions:
 
 # POSTGRES SETTING -------------------------------------------------------------------------------------------------
 - group: "database settings"
+  variable: nodePorts.postgres
+  default: "30435"
+  description: "postgres port"
+  type: string
+  label: Access port       
+- group: "database settings"
   variable: mariadb.mariadbDatabase
   default: "postgres"
   description: "Database name to create"
