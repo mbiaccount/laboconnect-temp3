@@ -1,42 +1,35 @@
-apiVersion: apps/v1beta1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: {{ template "fullname" . }}
+  name: httpd
   labels:
-    app: {{ template "fullname" . }}
-#    app: laboconnect
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+    app: LaboConnect
+  namespace: lc
+#    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+#    release: "{{ .Release.Name }}"
+#    heritage: "{{ .Release.Service }}"
 spec:
   replicas: 1
   template:
     metadata:
       labels:
         app: {{ template "fullname" . }}
-    spec:
-      #{{- if .Values.image.pullSecrets }}
-      #imagePullSecrets:
-      #{{- range .Values.image.pullSecrets }}
-      #  - name: {{ . }}
-      #{{- end}}
-      #{{- end }}
-      containers:
-      - name: {{ template "fullname" . }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
-        ports:
-        - name: https
-          containerPort: 443
-        volumeMounts:
-        - mountPath: /etc/localtime
-          name: localtime
-      imagePullSecrets:
-      - name: regcred 
-      volumes:
-      - name: localtime
-        hostPath:
-          path: /etc/localtime
+  containers:
+  - name: {{ template "fullname" . }}
+    image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+    imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+    ports:
+    - name: https
+      containerPort: 443
+    volumeMounts:
+    - mountPath: /etc/localtime
+      name: localtime
+  imagePullSecrets:
+  - name: regcred 
+  volumes:
+  - name: localtime
+    hostPath:
+      path: /etc/localtime
 ---
 apiVersion: apps/v1beta1
 kind: Deployment
