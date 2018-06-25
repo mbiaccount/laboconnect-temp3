@@ -38,6 +38,20 @@ spec:
         hostPath:
           path: /etc/localtime
 # ------------------------------------------------------------------------------------------------------------------
+piVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: LaboConnect2
+  name: postgres
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: LaboConnect2
+    spec:
+      containers:
       - name: postgres
         image: "{{ .Values.mariadb.image.repository }}:{{ .Values.mariadb.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
