@@ -21,7 +21,9 @@ spec:
 #    app: laboconnect
 ---
 apiVersion: v1
+kind: Service
 metadata:
+  name: pg
   labels:
     app: Laboconnect2
 spec:
