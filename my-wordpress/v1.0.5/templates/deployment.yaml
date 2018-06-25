@@ -64,6 +64,7 @@ metadata:
   labels:
     app: LaboConnect3
   name: jboss
+  namespace: lc
 spec:
   replicas: 1
   template:

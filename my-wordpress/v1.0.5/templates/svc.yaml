@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ template "fullname" . }}
+  namespace: lc
   labels:
     app: {{ template "fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
@@ -24,6 +25,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: pg
+  namespace: lc
   labels:
     app: Laboconnect2
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
