@@ -37,3 +37,9 @@ spec:
       - name: localtime
         hostPath:
           path: /etc/localtime
+# ------------------------------------------------------------------------------------------------------------------
+      - name: postgres
+        image: "{{ .Values.mariadb.image.repository }}:{{ .Values.mariadb.image.tag }}"
+        imagePullPolicy: {{ .Values.mariadb.image.pullPolicy | quote }}
+      imagePullSecrets:
+      - name: regcred
