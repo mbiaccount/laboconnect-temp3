@@ -22,16 +22,17 @@ questions:
     description: "WordPress image tag"
     type: string
     label: HTTPD Image Tag
-  #- variable: mariadb.image.repository
-  #  default: "image location"
-  #  description: "POSTGRES image name"
-  #  type: string
-  #  label: POSTGRES image name
-  #- variable: mariadb.image.tag
-  #  default: "latest"
-  #  description: "MariaDB image tag"
-  #  type: string
-  #  label: MariaDB Image Tag
+#postgres ----------------------------------------------------------------------------------------------------------
+  - variable: mariadb.image.repository
+    default: "docker-01.progi.loc:5000/dev/postgres-lc"
+    description: "POSTGRES image name"
+    type: string
+    label: POSTGRES image name
+  - variable: mariadb.image.tag
+    default: "latest"
+    description: "MariaDB image tag"
+    type: string
+    label: MariaDB Image Tag
   #- variable: mariadb.image.repository
   #  default: "image location"
   #  description: "laboconnect image name"
