@@ -23,7 +23,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: postgres-sv 
-#  namespace: lc
+  namespace: lc
   labels:
     app: Laboconnect2
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
@@ -43,7 +43,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: laboconnect-sv
-#  namespace: lc
+  namespace: lc
   labels:
     app: Laboconnect3
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
