@@ -37,41 +37,41 @@ spec:
       - name: localtime
         hostPath:
           path: /etc/localtime
----
+#---
 # ------------------------------------------------------------------------------------------------------------------
-apiVersion: apps/v1beta1
-kind: Deployment
-metadata:
-  labels:
-    app: LaboConnect2
-  name: postgres
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: LaboConnect2
-    spec:
-      containers:
-      - name: postgres
-        image: "{{ .Values.mariadb.image.repository }}:{{ .Values.mariadb.image.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
-        ports:
-        - name: postgres
-          containerPort: 5432
-        volumeMounts:
-        - name: localtime
-          mountPath: /etc/localtime
-        - name: zoneinfo
-          mountPath: /usr/share/zoneinfo
-        - name: postgresql
-          mountPath: /var/lib/pgsql/data
-      imagePullSecrets:
-      - name: regcred
-      volumes:
-      - hostPath:
-          path: "/etc/localtime"
-        name: localtime
-      - hostPath:
-          path: "/usr/share/zoneinfo"
-        name: zoneinfo
+#apiVersion: apps/v1beta1
+#kind: Deployment
+#metadata:
+#  labels:
+#    app: LaboConnect2
+#  name: postgres
+#spec:
+#  replicas: 1
+#  template:
+#    metadata:
+#      labels:
+#        app: LaboConnect2
+#    spec:
+#      containers:
+#      - name: postgres
+#        image: "{{ .Values.mariadb.image.repository }}:{{ .Values.mariadb.image.tag }}"
+#        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+#        ports:
+#        - name: postgres
+#          containerPort: 5432
+#        volumeMounts:
+#        - name: localtime
+#          mountPath: /etc/localtime
+#        - name: zoneinfo
+#          mountPath: /usr/share/zoneinfo
+#        - name: postgresql
+#          mountPath: /var/lib/pgsql/data
+#      imagePullSecrets:
+#      - name: regcred
+#      volumes:
+#      - hostPath:
+#          path: "/etc/localtime"
+#        name: localtime
+#      - hostPath:
+#          path: "/usr/share/zoneinfo"
+#        name: zoneinfo
