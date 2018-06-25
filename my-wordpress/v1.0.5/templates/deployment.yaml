@@ -1,0 +1,39 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+#    app: laboconnect
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      #{{- if .Values.image.pullSecrets }}
+      #imagePullSecrets:
+      #{{- range .Values.image.pullSecrets }}
+      #  - name: {{ . }}
+      #{{- end}}
+      #{{- end }}
+      containers:
+      - name: {{ template "fullname" . }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+        ports:
+        - name: https
+          containerPort: 443
+        volumeMounts:
+        - mountPath: /etc/localtime
+          name: localtime
+      imagePull Secrets:
+      - name: regcredfaux 
+      volumes:
+      - name: localtime
+        hostPath:
+          path: /etc/localtime

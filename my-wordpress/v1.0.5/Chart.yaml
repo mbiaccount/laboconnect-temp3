@@ -1,0 +1,20 @@
+name: laboconnect 
+version: 0.0.1
+appVersion: 3.0.6
+description: Laboconnect software deployment
+#icon: /root/logo_login.png
+keywords:
+- wordpress
+- cms
+- blog
+- http
+- web
+- application
+- php
+home: http://laboconnect.com/
+#sources:
+#- https://github.com/bitnami/bitnami-docker-wordpress
+maintainers:
+- name: mbi
+  email: matthieu.billiottet@dlsante.fr
+engine: gotpl

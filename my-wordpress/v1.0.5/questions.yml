@@ -1,0 +1,161 @@
+categories:
+- Blog
+- CMS
+questions:
+- variable: defaultImage
+  default: "true"
+  description: "Use default Docker image"
+  label: Use Default Image
+  type: boolean
+  show_subquestion_if: false
+  group: "HTTPD Images"
+  subquestions:
+  - group: "httpd images"
+    variable: httpdimage.repository
+    default: "docker-01.progi.loc:5000/dev/httpd-lc2"
+    description: "HTTPD image"
+    type: string
+    label: HTTPD Image Name
+  - group: "httpd images"
+    variable: httpdimage.tag
+    default: "latest"
+    description: "WordPress image tag"
+    type: string
+    label: HTTPD Image Tag
+  #- variable: mariadb.image.repository
+  #  default: "image location"
+  #  description: "POSTGRES image name"
+  #  type: string
+  #  label: POSTGRES image name
+  #- variable: mariadb.image.tag
+  #  default: "latest"
+  #  description: "MariaDB image tag"
+  #  type: string
+  #  label: MariaDB Image Tag
+  #- variable: mariadb.image.repository
+  #  default: "image location"
+  #  description: "laboconnect image name"
+  #  type: string
+  #  label: laboconnect image name
+  #- variable: mariadb.image.tag
+  #  default: "latest"
+  #  description: "laboconnect image tag"
+  #  type: string
+  #  label: MariaDB Image Tag
+
+# HTTPD SETTING ----------------------------------------------------------------------------------------------------
+- group: "frontal web settings"
+  variable: httpdhost
+  default: "192.168.169.XX"
+  description: "IP or FQDN of the host"
+  type: string
+  required: true
+  label: Frontal web host
+- group: "frontal web settings"
+  variable: nodePorts.https
+  default: "30111"
+  description: "port you use to access application (browser)"
+  type: string
+  label: Access port
+- group: "frontal web settings"
+  variable: serviceType
+  default: "NodePort"
+  description: "nobody understand"
+  type: string
+  label: NodePort for external endpoint
+
+# POSTGRES SETTING -------------------------------------------------------------------------------------------------
+- group: "database settings"
+  variable: mariadb.mariadbDatabase
+  default: "postgres"
+  description: "Database name to create"
+  type: string
+  label: POSTGRES Database
+- group: "database settings"
+  variable: mariadb.mariadbUser
+  default: "postgres"
+  description: "Database user to create"
+  type: string
+  label: MariaDB User
+- group: "database settings"
+  variable: mariadb.mariadbPassword
+  default: ""
+  description: "password will be auto-generated if not specified"
+  type: password
+  label: POSTGRES Password
+
+- variable: mariadb.persistence.enabled
+  default: "false"
+  description: "Enable persistent volume for MariaDB"
+  type: boolean
+  required: true
+  label: MariaDB Persistent Volume Enabled
+  show_if: "mariadb.enabled=true"
+  show_subquestion_if: true
+  group: "Database Settings"
+  subquestions:
+  - variable: mariadb.persistence.size
+    default: "8Gi"
+    description: "MariaDB Persistent Volume Size"
+    type: string
+    label: MariaDB Volume Size
+  - variable: mariadb.persistence.storageClass
+    default: ""
+    description: "If undefined or null, uses the default StorageClass. Default to null"
+    type: storageclass
+    label: Default StorageClass for MariaDB
+
+# LABOCONNECT-------------------------------------------------------------------------------------------------------
+- group: "LABOCONNECT Settings"
+  variable: jboss.hostname
+  default: "jboss1"
+  description: "Jboss hostname"
+  type: string
+  label: "Jboss hostname" 
+
+
+# OTHERTHING--------------------------------------------------------------------------------------------------------
+#- variable: serviceType
+#  default: "NodePort"
+#  description: "WordPress Service type"
+#  type: enum
+#  show_if: "ingress.enabled=false"
+#  options:
+#    - "ClusterIP"
+#    - "NodePort"
+#    - "LoadBalancer"
+#  required: true
+#  label: WordPress Service Type
+#  show_subquestion_if: "NodePort"
+#  group: "Services and Load Balancing"
+#  subquestions:
+#  - variable: nodePorts.http
+#    default: ""
+#    description: "NodePort http port(to set explicitly, choose port between 30000-32767)"
+#    type: int
+#    min: 30000
+#    max: 32767
+#    show_if: "ingress.enabled=false&&serviceType=NodePort"
+#    label: NodePort Http Port
+#  - variable: nodePorts.https
+#    default: ""
+#    description: "NodePort https port(to set explicitly, choose port between 30000-32767)"
+#    type: int
+#    min: 30000
+#    max: 32767
+#    show_if: "ingress.enabled=false&&serviceType=NodePort"
+#    label: NodePort Https Port
+- variable: ingress.enabled
+  default: "true"
+  description: "Expose app using Layer 7 Load Balancer - ingress"
+  type: boolean
+  label: Expose app using Layer 7 Load Balancer
+  show_subquestion_if: true
+  group: "Services and Load Balancing"
+  subquestions:
+  - variable: ingress.hosts[0].name
+    default: "xip.io"
+    description: "Hostname to your WordPress installation"
+    type: hostname
+    required: true
+    label: Hostname
