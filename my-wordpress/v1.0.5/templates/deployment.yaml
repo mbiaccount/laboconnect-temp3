@@ -19,8 +19,13 @@ spec:
     volumeMounts:
     - mountPath: /etc/localtime
       name: localtime
+# httpd secret                         ---------------------------------
+  {{- if .Values.image.pullSecrets }}
   imagePullSecrets:
-  - name: regcred 
+  {{- range .Values.image.pullSecrets }}
+  - name: {{ . }}
+  {{- end}}
+  {{- end }}
   volumes:
   - name: localtime
     hostPath:
@@ -74,6 +79,5 @@ spec:
     ports:
     - name: postgres
       containerPort: 7070
-    imagePullSecrets:
-    - name: regcred
-
+  #imagePullSecrets:
+  #- name: regcred

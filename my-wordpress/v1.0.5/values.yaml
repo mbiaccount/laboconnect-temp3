@@ -16,8 +16,8 @@ image:
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
   ##
-  # pullSecrets:
-  #   - myRegistrKeySecretName
+  pullSecrets:
+    - Regcred
 
 jboss:
   repository: docker-01.progi.loc:5000/dev/laboconnect
