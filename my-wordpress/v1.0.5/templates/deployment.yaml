@@ -91,7 +91,7 @@ spec:
       containers:
       - name: jboss
         #image: docker-01.progi.loc:5000/dev/laboconnect:LC03.06mbi
-        image: "{{ .Values.jboss.image.repository }}:{{ .Values.jboss.image.tag }}"
+        image: "{{ .Values.jboss.repository }}:{{ .Values.jboss.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         ports:
         - name: postgres

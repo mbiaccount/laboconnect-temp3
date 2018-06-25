@@ -34,12 +34,12 @@ questions:
     type: string
     label: POSTGRES Image Tag
 #Jboss -------------------------------------------------------------------------------------------------------------
-  - variable: jboss.image.repository
+  - variable: jboss.repository
     default: "docker-01.progi.loc:5000/dev/laboconnect"
     description: "laboconnect image name"
     type: string
     label: laboconnect image name
-  - variable: jboss.image.tag
+  - variable: jboss.tag
     default: "LC03.06mbi"
     description: "laboconnect image tag"
     type: string
