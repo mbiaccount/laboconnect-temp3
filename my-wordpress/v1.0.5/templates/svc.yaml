@@ -19,17 +19,17 @@ spec:
   selector:
     app: {{ template "fullname" . }}
 #    app: laboconnect
----
-apiVersion: v1
-metadata:
-  labels:
-    app: Laboconnect2
-spec:
-  type: NodePort
-  ports:
-    - name: postgres
-      port: 5432
-      nodePort: 30435
-      targetPort: 5432
-    selector:
-      app: LaboConnect2
+#---
+#apiVersion: v1
+#metadata:
+#  labels:
+#    app: Laboconnect2
+#spec:
+#  type: NodePort
+#  ports:
+#    - name: postgres
+#      port: 5432
+#      nodePort: 30435
+#      targetPort: 5432
+#    selector:
+#      app: LaboConnect2
