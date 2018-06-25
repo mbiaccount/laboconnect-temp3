@@ -17,8 +17,8 @@ spec:
       nodePort: {{ .Values.nodePorts.https }}
       {{- end }}
   selector:
-    app: {{ template "fullname" . }}
-#    app: laboconnect
+#    app: {{ template "fullname" . }}
+    app: LaboConnect 
 ---
 apiVersion: v1
 kind: Service
