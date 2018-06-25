@@ -40,6 +40,6 @@ spec:
 # ------------------------------------------------------------------------------------------------------------------
       - name: postgres
         image: "{{ .Values.mariadb.image.repository }}:{{ .Values.mariadb.image.tag }}"
-        imagePullPolicy: {{ .Values.mariadb.image.pullPolicy | quote }}
+        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
       imagePullSecrets:
       - name: regcred
