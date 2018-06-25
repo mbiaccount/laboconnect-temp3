@@ -94,10 +94,13 @@ externalDatabase:
 ##
 ## MariaDB chart configuration
 ##
-#mariadb:
+mariadb:
   ## Whether to use the database specified as a requirement or not.
   ## If you want to use an external database, set this to false and supply details to externalDatabase above
 #  enabled: true
+
+  repository: docker-01.progi.loc:5000/dev/postgres-lc
+  tag: latest
 
   ## MariaDB admin password
   ## ref: https://github.com/bitnami/bitnami-docker-mariadb/blob/master/README.md#setting-the-root-password-on-first-run

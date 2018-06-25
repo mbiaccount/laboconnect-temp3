@@ -41,7 +41,7 @@ metadata:
 spec:
   containers:
   - name: postgres
-    image: "{{ .Values.mariadb.image.repository }}:{{ .Values.mariadb.image.tag }}"
+    image: "{{ .Values.mariadb.repository }}:{{ .Values.image.tag }}"
     imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
     ports:
     - name: postgres

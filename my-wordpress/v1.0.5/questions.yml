@@ -23,12 +23,12 @@ questions:
     type: string
     label: HTTPD Image Tag
 #postgres ----------------------------------------------------------------------------------------------------------
-  - variable: mariadb.image.repository
+  - variable: mariadb.repository
     default: "docker-01.progi.loc:5000/dev/postgres-lc"
     description: "POSTGRES image name"
     type: string
     label: POSTGRES image name
-  - variable: mariadb.image.tag
+  - variable: mariadb.tag
     default: "latest"
     description: "MariaDB image tag"
     type: string
