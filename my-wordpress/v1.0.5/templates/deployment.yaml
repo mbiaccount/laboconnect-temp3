@@ -4,7 +4,7 @@ metadata:
   name: httpd
   labels:
     app: LaboConnect
-  namespaces: lc
+  namespace: lc
 #    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
 #    release: "{{ .Release.Name }}"
 #    heritage: "{{ .Release.Service }}"
