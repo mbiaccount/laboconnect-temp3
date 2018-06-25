@@ -2,7 +2,7 @@ name: laboconnect
 version: 0.0.1
 appVersion: 3.0.6
 description: Laboconnect software deployment
-#icon: /root/logo_login.png
+icon: https://laboconnect.com/images/logo_login.png
 keywords:
 - wordpress
 - cms
