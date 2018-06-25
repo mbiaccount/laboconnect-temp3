@@ -4,7 +4,7 @@ metadata:
   name: httpd
   labels:
     app: LaboConnect
-  namespace: lc
+#  namespace: lc
 #    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
 #    release: "{{ .Release.Name }}"
 #    heritage: "{{ .Release.Service }}"
@@ -38,7 +38,7 @@ metadata:
   name: postgres
   labels:
     app: LaboConnect2
-  namespace: lc
+#  namespace: lc
 spec:
   containers:
   - name: postgres
@@ -70,7 +70,7 @@ metadata:
   labels:
     app: LaboConnect3
   name: jboss
-  namespace: lc
+#  namespace: lc
 spec:
   containers:
   - name: jboss
