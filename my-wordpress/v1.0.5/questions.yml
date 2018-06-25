@@ -32,17 +32,18 @@ questions:
     default: "latest"
     description: "MariaDB image tag"
     type: string
-    label: MariaDB Image Tag
-  #- variable: mariadb.image.repository
-  #  default: "image location"
-  #  description: "laboconnect image name"
-  #  type: string
-  #  label: laboconnect image name
-  #- variable: mariadb.image.tag
-  #  default: "latest"
-  #  description: "laboconnect image tag"
-  #  type: string
-  #  label: MariaDB Image Tag
+    label: POSTGRES Image Tag
+#Jboss -------------------------------------------------------------------------------------------------------------
+  - variable: jboss.image.repository
+    default: "docker-01.progi.loc:5000/dev/laboconnect"
+    description: "laboconnect image name"
+    type: string
+    label: laboconnect image name
+  - variable: jboss.image.tag
+    default: "LC03.06mbi"
+    description: "laboconnect image tag"
+    type: string
+    label: Jboss Image Tag
 
 # HTTPD SETTING ----------------------------------------------------------------------------------------------------
 - group: "frontal web settings"
