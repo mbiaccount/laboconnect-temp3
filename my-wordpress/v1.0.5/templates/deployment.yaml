@@ -16,6 +16,7 @@ spec:
     ports:
     - name: https
       containerPort: 443
+      protocol: TCP
     volumeMounts:
     - mountPath: /etc/localtime
       name: localtime

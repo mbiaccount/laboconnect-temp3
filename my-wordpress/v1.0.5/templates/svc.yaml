@@ -5,10 +5,6 @@ metadata:
 #  namespace: lc
   labels:
     app: LaboConnect
-#    app: {{ template "fullname" . }}
-#    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-#    release: "{{ .Release.Name }}"
-#    heritage: "{{ .Release.Service }}"
 spec:
   type: NodePort
   ports:
@@ -19,8 +15,9 @@ spec:
       nodePort: {{ .Values.nodePorts.https }}
       {{- end }}
   selector:
-#    app: {{ template "fullname" . }}
     app: LaboConnect
+#    app: {{ template "fullname" . }}
+#    app: LaboConnect
 ---
 apiVersion: v1
 kind: Service
