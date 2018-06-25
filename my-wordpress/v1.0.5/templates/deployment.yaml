@@ -63,8 +63,8 @@ spec:
           mountPath: /etc/localtime
         - name: zoneinfo
           mountPath: /usr/share/zoneinfo
-        - name: postgresql
-          mountPath: /var/lib/pgsql/data
+        #- name: postgresql
+        #  mountPath: /var/lib/pgsql/data
       imagePullSecrets:
       - name: regcred
       volumes:
