@@ -19,6 +19,11 @@ image:
   # pullSecrets:
   #   - myRegistrKeySecretName
 
+jboss:
+  repository: docker-01.progi.loc:5000/dev/laboconnect
+  image: docker-01.progi.loc:5000/dev/laboconnect
+  tag: LC03.06mbi
+  pullPolicy: IfNoPresent
 ## User of the application
 ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
 ##
