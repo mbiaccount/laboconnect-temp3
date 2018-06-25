@@ -58,28 +58,22 @@ spec:
       path: "/usr/share/zoneinfo"
     name: zoneinfo
 ---
-kind: Deployment
-apiVersion: apps/v1beta1
+kind: Pod
+apiVersion: v1
 metadata:
   labels:
     app: LaboConnect3
   name: jboss
   namespace: lc
 spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: LaboConnect3
-    spec:
-      containers:
-      - name: jboss
-        #image: docker-01.progi.loc:5000/dev/laboconnect:LC03.06mbi
-        image: "{{ .Values.jboss.repository }}:{{ .Values.jboss.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
-        ports:
-        - name: postgres
-          containerPort: 7070
-      imagePullSecrets:
-      - name: regcred
+  containers:
+  - name: jboss
+   #image: docker-01.progi.loc:5000/dev/laboconnect:LC03.06mbi
+    image: "{{ .Values.jboss.repository }}:{{ .Values.jboss.tag }}"
+    imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+    ports:
+    - name: postgres
+      containerPort: 7070
+    imagePullSecrets:
+    - name: regcred
 

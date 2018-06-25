@@ -40,3 +40,24 @@ spec:
       targetPort: 5432
 #    selector:
 #      app: LaboConnect2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: laboconnect-sv
+  namespace: lc
+  labels:
+    app: Laboconnect3
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  type: NodePort
+  ports:
+  - name: postgres
+    port: 7070
+#    nodePort: {{ .Values.nodePorts.postgres }}
+    targetPort: 7070
+#    selector:
+#    #      app: LaboConnect2
+#
