@@ -92,7 +92,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: envfile
-  namespace: {{ .Values. | quote }}
+#  namespace: {{ .Values. | quote }}
 type: Opaque
 data:
   PASS_LC: UUJ3WjRISmJXdg==
