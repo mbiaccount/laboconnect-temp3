@@ -4,10 +4,11 @@ metadata:
   name: httpd-sv
 #  namespace: lc
   labels:
-    app: {{ template "fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+    app: LaboConnect
+#    app: {{ template "fullname" . }}
+#    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+#    release: "{{ .Release.Name }}"
+#    heritage: "{{ .Release.Service }}"
 spec:
   type: NodePort
   ports:
