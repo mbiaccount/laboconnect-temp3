@@ -64,11 +64,11 @@ spec:
         #  mountPath: /var/lib/pgsql/data
     env:
     - name: PASS_LC
-      value: "QBwZ4HJbWv"
+      value: "WAsGvo1sHU"
     - name: PASS_MSS_RO
-      value: "kUjEjhNa28"
+      value: "k6F348Dm1C"
     - name: PASS_MSS_RW
-      value: "d3TM96vTn1"
+      value: "lZSQomislR"
 #  imagePullSecrets:
 #  - name: regcred
   volumes:
