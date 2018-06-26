@@ -121,6 +121,32 @@ questions:
   type: string
   label: "Jboss hostname" 
 
+# SECRET Registry --------------------------------------------------------------------------------------------------
+- group: "Registry access"
+  variable: registry.host
+  default: "docker-01"
+  description: "Registry host"
+  type: string
+  label: "Registry host"
+- group: "Registry access"
+  variable: registry.user.name
+  default: "interne"
+  description: "user name"
+  type: string
+  label: "user name"
+- group: "Registry access"
+  variable: registry.user.pass
+  default: "DL@sante1"
+  description: "user pass"
+  type: string
+  label: "user pass"
+- group: "Registry access"
+  variable: registry.user.email
+  default: "matthieu.billiottet@dlsante.fr"
+  description: "user email"
+  type: string
+  label: "user email"
+
 
 # OTHERTHING--------------------------------------------------------------------------------------------------------
 #- variable: serviceType
