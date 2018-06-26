@@ -58,5 +58,5 @@ spec:
 #    nodePort: {{ .Values.nodePorts.postgres }}
     targetPort: 7070
   selector:
-    app: LaboConnect2
+    app: LaboConnect3
 #
