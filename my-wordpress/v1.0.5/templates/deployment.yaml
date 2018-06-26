@@ -19,7 +19,7 @@ spec:
       protocol: TCP
     - name: modcluster
       containerPort: 6666
-    envForm:
+    envFrom:
     - secretRef:
         name: envfile
     volumeMounts:
@@ -52,6 +52,9 @@ spec:
     ports:
     - name: postgres
       containerPort: 5432
+    envFrom:
+    - secretRef:
+        name: envfile
     volumeMounts:
     - name: localtime
       mountPath: /etc/localtime
@@ -85,6 +88,9 @@ spec:
     ports:
     - name: postgres
       containerPort: 7070
+    envFrom:
+    - secretRef:
+        name: envfile
   #imagePullSecrets:
   #- name: regcred
 ---
