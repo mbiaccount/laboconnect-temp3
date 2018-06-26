@@ -57,7 +57,7 @@ spec:
       containerPort: 5432
     env:
     - name: HTTPD_VHOST
-      Value: {{ .Values.env.httphost }}
+      value: {{ .Values.env.httphost }}
     envFrom:
     - secretRef:
         name: envfile
@@ -103,7 +103,7 @@ spec:
       containerPort: 7070
     env:
     - name: HTTPD_VHOST
-      Value: {{ .Values.env.httphost }}
+      value: {{ .Values.env.httphost }}
     envFrom:
     - secretRef:
         name: envfile
