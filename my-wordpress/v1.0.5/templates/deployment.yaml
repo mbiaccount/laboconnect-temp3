@@ -26,13 +26,13 @@ spec:
     - mountPath: /etc/localtime
       name: localtime
 # httpd secret                         ---------------------------------
-#  {{- if .Values.image.pullSecrets }}
+  {{- if .Values.image.pullSecrets }}
   imagePullSecrets:
-#  {{- range .Values.image.pullSecrets }}
-  - name: regcred
-#  {{- end}}
-#  {{- end }}
-  volumes:
+  {{- range .Values.image.pullSecrets }}
+  - name: {{ . }}
+  {{- end}}
+  {{- end }}
+ volumes:
   - name: localtime
     hostPath:
       path: /etc/localtime
@@ -62,15 +62,12 @@ spec:
       mountPath: /usr/share/zoneinfo
     - name: postgresql
       mountPath: /var/lib/pgsql/data
-    #env:
-    #- name: PASS_LC
-    #  value: "WAsGvo1sHU"
-    #- name: PASS_MSS_RO
-    #  value: "k6F348Dm1C"
-    #- name: PASS_MSS_RW
-    #  value: "lZSQomislR"
+  {{- if .Values.image.pullSecrets }}
   imagePullSecrets:
-  - name: regcred
+  {{- range .Values.image;pullSecrets }}
+  - name: {{ . }}
+  {{- end}}
+  {{- end}}
   volumes:
   - hostPath:
       path: "/etc/localtime"
@@ -120,8 +117,12 @@ spec:
       name: zoneinfo
     - mountPath: /usr/build
       name: ip
+  {{- if .Values.image.pullSecrets }}
   imagePullSecrets:
-  - name: regcred
+  {{- range .Values.image;pullSecrets }}
+  - name: {{ . }}
+  {{- end}}
+  {{- end}}
   volumes:
   - name: localtime
     hostPath:
