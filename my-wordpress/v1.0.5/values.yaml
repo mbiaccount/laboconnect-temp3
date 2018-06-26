@@ -27,6 +27,11 @@ jboss:
 ## User of the application
 ## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
 ##
+
+env:
+  httphost: docker-01
+
+
 wordpressUsername: user
 
 ## Application password

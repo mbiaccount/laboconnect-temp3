@@ -47,9 +47,9 @@ questions:
 
 # HTTPD SETTING ----------------------------------------------------------------------------------------------------
 - group: "frontal web settings"
-  variable: httpdhost
-  default: "192.168.169.XX"
-  description: "IP or FQDN of the host"
+  variable: env.httphost
+  default: "docker-01"
+  description: "FQDN of the host"
   type: string
   required: true
   label: Frontal web host
