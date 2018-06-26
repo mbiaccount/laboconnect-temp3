@@ -69,8 +69,8 @@ spec:
       value: "kUjEjhNa28"
     - name: PASS_MSS_RW
       value: "d3TM96vTn1"
-  imagePullSecrets:
-  - name: regcred
+#  imagePullSecrets:
+#  - name: regcred
   volumes:
   - hostPath:
       path: "/etc/localtime"
