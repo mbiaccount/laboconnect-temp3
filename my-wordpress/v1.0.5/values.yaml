@@ -1,8 +1,5 @@
 image:
-  # registry: docker.io
   #repository: docker-01.progi.loc:5000/dev/httpd-lc2
-  #tag: latest
-  repository: docker-01.progi.loc:5000/dev/httpd-lc2
   tag: latest 
   pullPolicy: IfNotPresent
   ## Optionally specify an array of imagePullSecrets.
