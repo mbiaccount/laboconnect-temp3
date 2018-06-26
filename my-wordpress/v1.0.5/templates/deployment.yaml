@@ -19,9 +19,9 @@ spec:
       protocol: TCP
     - name: modcluster
       containerPort: 6666
-#    envForm:
-#    - secretRef:
-#        name: envfile
+    envForm:
+    - secretRef:
+        name: envfile
     volumeMounts:
     - mountPath: /etc/localtime
       name: localtime
