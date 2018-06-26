@@ -101,6 +101,25 @@ spec:
     envFrom:
     - secretRef:
         name: envfile
+    volumeMounts:
+    - mountPath: "/etc/localtime"
+      name: localtime
+    - mountPath: /usr/labo/messages/
+      name: messages
+    - mountPath: /usr/labo/jboss-eap-6.1/domain/log/
+      name: jboss-controller-log
+    - mountPath: /usr/labo/jboss-eap-6.1/domain/servers/node1-main-server/log
+      name: jboss-log
+    - mountPath: /usr/labo/laboconnect/
+      name: laboconnect
+    - mountPath: /usr/labo/jboss-eap-6.1/modules/system/layers/base/fr/dlsante/settings/laboconnect/main
+      name: properties
+    - mountPath: /usr/labo/sql
+      name: sql
+    - mountPath: "/usr/share/zoneinfo"
+      name: zoneinfo
+    - mountPath: /usr/build
+      name: ip
   #imagePullSecrets:
   #- name: regcred
 ---
