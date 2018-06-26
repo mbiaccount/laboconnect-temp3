@@ -60,8 +60,8 @@ spec:
       mountPath: /etc/localtime
     - name: zoneinfo
       mountPath: /usr/share/zoneinfo
-        #- name: postgresql
-        #  mountPath: /var/lib/pgsql/data
+    - name: postgresql
+      mountPath: /var/lib/pgsql/data
     env:
     - name: PASS_LC
       value: "WAsGvo1sHU"
@@ -78,6 +78,9 @@ spec:
   - hostPath:
       path: "/usr/share/zoneinfo"
     name: zoneinfo
+  - hostPath:
+      path: /root/dlsante/volumes/laboconnect/LC03.06/postgresql
+    name: postgresql
 ---
 kind: Pod
 apiVersion: v1
