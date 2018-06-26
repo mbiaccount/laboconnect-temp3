@@ -30,8 +30,8 @@ jboss:
 
 env:
   httphost: docker-01
-
-
+  postgreshost: docker-01
+  jbosshost: docker-01
 wordpressUsername: user
 
 ## Application password

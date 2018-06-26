@@ -22,6 +22,10 @@ spec:
     env:
     - name: HTTPD_VHOST
       value: {{ .Values.env.httphost }}
+    - name: BDD_HOST
+      value: {{ .Values.env.jbosshost }}
+    - name: JBOSS_HOST
+      value: {{ .Values.env.postgreshost }}
     envFrom:
     - secretRef:
         name: envfile
@@ -58,6 +62,10 @@ spec:
     env:
     - name: HTTPD_VHOST
       value: {{ .Values.env.httphost }}
+    - name: BDD_HOST
+      value: {{ .Values.env.jbosshost }}
+    - name: JBOSS_HOST
+      value: {{ .Values.env.postgreshost }}
     envFrom:
     - secretRef:
         name: envfile
@@ -104,6 +112,10 @@ spec:
     env:
     - name: HTTPD_VHOST
       value: {{ .Values.env.httphost }}
+    - name: BDD_HOST
+      value: {{ .Values.env.jbosshost }}
+    - name: JBOSS_HOST
+      value: {{ .Values.env.postgreshost }}
     envFrom:
     - secretRef:
         name: envfile
@@ -169,8 +181,8 @@ data:
   PASS_LC: UUJ3WjRISmJXdg==
   PASS_MSS_RO: a1VqRWpoTmEyOA==
   PASS_MSS_RW: ZDNUTTk2dlRuMQ==
-  JBOSS_HOST: amJvc3Mx
-  BDD_HOST: cG9zdGdyZXMx
+  #JBOSS_HOST: amJvc3Mx
+  #BDD_HOST: cG9zdGdyZXMx
   HTTPD_HOST: aHR0cGQx
   #HTTPD_VHOST: ZG9ja2VyLTAx
   MESSAGES: ZmFsc2U=

@@ -72,7 +72,13 @@ questions:
   default: "30435"
   description: "postgres port"
   type: string
-  label: Access port       
+  label: Access port
+- group: "database settings"
+  variable: env.postgreshost
+  default: "docker-01"
+  description: "postgres host"
+  type: string
+  label: postgres host       
 - group: "database settings"
   variable: mariadb.mariadbDatabase
   default: "postgres"
@@ -84,7 +90,7 @@ questions:
   default: "postgres"
   description: "Database user to create"
   type: string
-  label: MariaDB User
+  label: POSTGRES User
 - group: "database settings"
   variable: mariadb.mariadbPassword
   default: ""
@@ -115,8 +121,8 @@ questions:
 
 # LABOCONNECT-------------------------------------------------------------------------------------------------------
 - group: "LABOCONNECT Settings"
-  variable: jboss.hostname
-  default: "jboss1"
+  variable: env.jbosshost
+  default: "docker-01"
   description: "Jboss hostname"
   type: string
   label: "Jboss hostname" 
