@@ -27,18 +27,18 @@ metadata:
 #  namespace: lc
   labels:
     app: Laboconnect2
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+#    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+#    release: "{{ .Release.Name }}"
+#    heritage: "{{ .Release.Service }}"
 spec:
   type: NodePort
   ports:
-    - name: postgres
-      port: 5432
-      nodePort: {{ .Values.nodePorts.postgres }}
-      targetPort: 5432
-#    selector:
-#      app: LaboConnect2
+  - name: postgres
+    port: 5432
+    nodePort: {{ .Values.nodePorts.postgres }}
+    targetPort: 5432
+  selector:
+    app: LaboConnect2
 ---
 apiVersion: v1
 kind: Service
@@ -57,6 +57,6 @@ spec:
     port: 7070
 #    nodePort: {{ .Values.nodePorts.postgres }}
     targetPort: 7070
-#    selector:
-#    #      app: LaboConnect2
+  selector:
+    app: LaboConnect2
 #
