@@ -12,7 +12,7 @@ spec:
   containers:
   - name: {{ template "fullname" . }}
     image: "{{ .Values.httpd.repository }}:{{ .Values.httpd.tag }}"
-    imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+    imagePullPolicy: {{ .Values.httpd.pullPolicy | quote }}
     ports:
     - name: https
       containerPort: 443
@@ -55,7 +55,7 @@ spec:
   containers:
   - name: postgres
     image: "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
-    imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+    imagePullPolicy: {{ .Values.mariadb.pullPolicy | quote }}
     ports:
     - name: postgres
       containerPort: 5432
@@ -105,7 +105,7 @@ spec:
   - name: jboss
    #image: docker-01.progi.loc:5000/dev/laboconnect:LC03.06mbi
     image: "{{ .Values.jboss.repository }}:{{ .Values.jboss.tag }}"
-    imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+    imagePullPolicy: {{ .Values.jboss.pullPolicy | quote }}
     ports:
     - name: postgres
       containerPort: 7070

@@ -13,7 +13,7 @@ jboss:
   repository: docker-01.progi.loc:5000/dev/laboconnect
   image: docker-01.progi.loc:5000/dev/laboconnect
   tag: LC03.06mbi
-  pullPolicy: IfNoPresent
+  pullPolicy: IfNotPresent
 
 env:
   httphost: docker-01
@@ -55,7 +55,7 @@ externalDatabase:
 mariadb:
   repository: docker-01.progi.loc:5000/dev/postgres-lc
   tag: latest
-
+  pullPolicy: IfNotPresent
 serviceType: NodePort
 ##
 ## serviceType: NodePort
