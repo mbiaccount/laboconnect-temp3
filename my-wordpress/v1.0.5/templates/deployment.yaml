@@ -62,15 +62,15 @@ spec:
       mountPath: /usr/share/zoneinfo
     - name: postgresql
       mountPath: /var/lib/pgsql/data
-    env:
-    - name: PASS_LC
-      value: "WAsGvo1sHU"
-    - name: PASS_MSS_RO
-      value: "k6F348Dm1C"
-    - name: PASS_MSS_RW
-      value: "lZSQomislR"
-#  imagePullSecrets:
-#  - name: regcred
+    #env:
+    #- name: PASS_LC
+    #  value: "WAsGvo1sHU"
+    #- name: PASS_MSS_RO
+    #  value: "k6F348Dm1C"
+    #- name: PASS_MSS_RW
+    #  value: "lZSQomislR"
+  imagePullSecrets:
+  - name: regcred
   volumes:
   - hostPath:
       path: "/etc/localtime"
