@@ -55,6 +55,9 @@ spec:
     ports:
     - name: postgres
       containerPort: 5432
+    env:
+    - name: HTTPD_VHOST
+      Value: {{ .Values.env.httphost }}
     envFrom:
     - secretRef:
         name: envfile
@@ -98,6 +101,9 @@ spec:
     ports:
     - name: postgres
       containerPort: 7070
+    env:
+    - name: HTTPD_VHOST
+      Value: {{ .Values.env.httphost }}
     envFrom:
     - secretRef:
         name: envfile
