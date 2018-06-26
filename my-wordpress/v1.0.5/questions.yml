@@ -11,13 +11,13 @@ questions:
   group: "Images"
   subquestions:
   - group: "Images"
-    variable: httpdimage.repository
+    variable: httpd.repository
     default: "docker-01.progi.loc:5000/dev/httpd-lc2"
     description: "HTTPD image"
     type: string
     label: HTTPD Image Name
   - group: "Images"
-    variable: httpdimage.tag
+    variable: httpd.tag
     default: "latest"
     description: "WordPress image tag"
     type: string

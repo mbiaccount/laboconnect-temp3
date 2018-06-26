@@ -11,7 +11,7 @@ metadata:
 spec:
   containers:
   - name: {{ template "fullname" . }}
-    image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+    image: "{{ .Values.httpd.repository }}:{{ .Values.httpd.tag }}"
     imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
     ports:
     - name: https
@@ -54,7 +54,7 @@ metadata:
 spec:
   containers:
   - name: postgres
-    image: "{{ .Values.mariadb.repository }}:{{ .Values.image.tag }}"
+    image: "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
     imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
     ports:
     - name: postgres

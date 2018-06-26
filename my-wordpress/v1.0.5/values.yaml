@@ -1,5 +1,5 @@
-image:
-  #repository: docker-01.progi.loc:5000/dev/httpd-lc2
+httpd:
+  repository: docker-01.progi.loc:5000/dev/httpd-lc2
   tag: latest 
   pullPolicy: IfNotPresent
   ## Optionally specify an array of imagePullSecrets.
@@ -34,12 +34,9 @@ wordpressBlogName: User's Blog!
 ##
 wordpressTablePrefix: wp_
 
-## Set to `yes` to allow the container to be started with blank passwords
-## ref: https://github.com/bitnami/bitnami-docker-wordpress#environment-variables
 allowEmptyPassword: "yes"
 
 externalDatabase:
-## All of these values are only used when mariadb.enabled is set to false
   ## Database host
   host: localhost
 
@@ -55,9 +52,6 @@ externalDatabase:
   ## Database port number
   port: 3306
 
-##
-## MariaDB chart configuration
-##
 mariadb:
   repository: docker-01.progi.loc:5000/dev/postgres-lc
   tag: latest
