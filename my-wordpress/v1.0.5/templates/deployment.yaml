@@ -122,11 +122,10 @@ spec:
       name: ip
   imagePullSecrets:
   - name: regcred
-  - name: regcred
   volumes:
   - name: localtime
-    hostPath
-     path: /etc/localtime
+    hostPath:
+      path: /etc/localtime
   - name: messages
     hostPath:
       path: /root/dlsante/volumes/laboconnect/LC03.06/messages/
