@@ -8,15 +8,15 @@ questions:
   label: Use Default Image
   type: boolean
   show_subquestion_if: false
-  group: "HTTPD Images"
+  group: "Images"
   subquestions:
-  - group: "httpd images"
+  - group: "Images"
     variable: httpdimage.repository
     default: "docker-01.progi.loc:5000/dev/httpd-lc2"
     description: "HTTPD image"
     type: string
     label: HTTPD Image Name
-  - group: "httpd images"
+  - group: "Images"
     variable: httpdimage.tag
     default: "latest"
     description: "WordPress image tag"
