@@ -162,10 +162,10 @@ spec:
       path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/laboconnect/
   - name: properties
     hostPath:
-      path: /root/dlsante/volumes/laboconnect/LC03.06/properties
+      path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/properties
   - name: sql
     hostPath:
-      path: /root/dlsante/volumes/laboconnect/LC03.06/sql
+      path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/sql
   - name: zoneinfo
     hostPath:
       path: /usr/share/zoneinfo
