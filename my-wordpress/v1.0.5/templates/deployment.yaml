@@ -120,8 +120,37 @@ spec:
       name: zoneinfo
     - mountPath: /usr/build
       name: ip
-  #imagePullSecrets:
-  #- name: regcred
+  imagePullSecrets:
+  - name: regcred
+  - name: regcred
+  volumes:
+  - name: localtime
+    hostPath
+     path: /etc/localtime
+  - name: messages
+    hostPath:
+      path: /root/dlsante/volumes/laboconnect/LC03.06/messages/
+  - name: jboss-controller-log
+    hostPath:
+      path: /root/dlsante/volumes/laboconnect/LC03.06/jboss-controller-log/
+  - name: jboss-log
+    hostPath:
+      path: /root/dlsante/volumes/laboconnect/LC03.06/jboss-log
+  - name: laboconnect
+    hostPath:
+      path: /root/dlsante/volumes/laboconnect/LC03.06/laboconnect/
+  - name: properties
+    hostPath:
+      path: /root/dlsante/volumes/laboconnect/LC03.06/properties
+  - name: sql
+    hostPath:
+      path: /root/dlsante/volumes/laboconnect/LC03.06/sql
+  - name: zoneinfo
+    hostPath:
+      path: /usr/share/zoneinfo
+  - name: ip
+    hostPath:
+      path: /root/dlsante/volumes/laboconnect/LC03.06/IP
 ---
 apiVersion: v1
 kind: Secret
