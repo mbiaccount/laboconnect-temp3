@@ -29,7 +29,7 @@ spec:
   {{- if .Values.image.pullSecrets }}
   imagePullSecrets:
   {{- range .Values.image.pullSecrets }}
-  - name: {{ . }}
+    - name: {{ . }}
   {{- end}}
   {{- end }}
  volumes:
@@ -65,7 +65,7 @@ spec:
   {{- if .Values.image.pullSecrets }}
   imagePullSecrets:
   {{- range .Values.image.pullSecrets }}
-  - name: {{ . }}
+    - name: {{ . }}
   {{- end}}
   {{- end}}
   volumes:
@@ -120,7 +120,7 @@ spec:
   {{- if .Values.image.pullSecrets }}
   imagePullSecrets:
   {{- range .Values.image.pullSecrets }}
-  - name: {{ . }}
+    - name: {{ . }}
   {{- end}}
   {{- end}}
   volumes:
