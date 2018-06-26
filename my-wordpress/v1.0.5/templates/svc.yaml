@@ -47,9 +47,9 @@ metadata:
 #  namespace: lc
   labels:
     app: Laboconnect3
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+#    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+#    release: "{{ .Release.Name }}"
+#    heritage: "{{ .Release.Service }}"
 spec:
   type: NodePort
   ports:
