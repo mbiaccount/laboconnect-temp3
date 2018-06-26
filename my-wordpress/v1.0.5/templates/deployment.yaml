@@ -33,9 +33,9 @@ spec:
     - mountPath: /etc/localtime
       name: localtime
 # httpd secret                         ---------------------------------
-  {{- if .Values.image.pullSecrets }}
+  {{- if .Values.httpd.pullSecrets }}
   imagePullSecrets:
-  {{- range .Values.image.pullSecrets }}
+  {{- range .Values.httpd.pullSecrets }}
     - name: {{ . }}
   {{- end}}
   {{- end }}
@@ -76,9 +76,9 @@ spec:
       mountPath: /usr/share/zoneinfo
     - name: postgresql
       mountPath: /var/lib/pgsql/data
-  {{- if .Values.image.pullSecrets }}
+  {{- if .Values.httpd.pullSecrets }}
   imagePullSecrets:
-  {{- range .Values.image.pullSecrets }}
+  {{- range .Values.httpd.pullSecrets }}
     - name: {{ . }}
   {{- end}}
   {{- end}}
@@ -138,9 +138,9 @@ spec:
       name: zoneinfo
     - mountPath: /usr/build
       name: ip
-  {{- if .Values.image.pullSecrets }}
+  {{- if .Values.httpd.pullSecrets }}
   imagePullSecrets:
-  {{- range .Values.image.pullSecrets }}
+  {{- range .Values.httpd.pullSecrets }}
     - name: {{ . }}
   {{- end}}
   {{- end}}
