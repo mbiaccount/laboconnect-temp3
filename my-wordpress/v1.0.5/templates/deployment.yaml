@@ -150,13 +150,13 @@ spec:
       path: /etc/localtime
   - name: messages
     hostPath:
-      path: /root/dlsante/volumes/laboconnect/LC03.06/messages/
+      path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/messages/
   - name: jboss-controller-log
     hostPath:
       path: /root/dlsante/volumes/laboconnect/LC03.06/jboss-controller-log/
   - name: jboss-log
     hostPath:
-      path: /root/dlsante/volumes/laboconnect/LC03.06/jboss-log
+      path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/jboss-log
   - name: laboconnect
     hostPath:
       path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/laboconnect/
