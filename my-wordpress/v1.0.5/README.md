@@ -1,6 +1,6 @@
 # WordPress
 
-[WordPress](https://wordpress.org/) is a medical application. This template is in developement phase
+[LaboConnect](https://laboconnect.com/) is a medical application. This template is in developement phase
 It has to be used by non-docker/kubernetes users ! Team did his best to limit interaction with console...
 
 ## Before doing anything
