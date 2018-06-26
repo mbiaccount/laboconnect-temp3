@@ -159,7 +159,7 @@ spec:
       path: /root/dlsante/volumes/laboconnect/LC03.06/jboss-log
   - name: laboconnect
     hostPath:
-      path: /root/dlsante/volumes/laboconnect/LC03.06/laboconnect/
+      path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/laboconnect/
   - name: properties
     hostPath:
       path: /root/dlsante/volumes/laboconnect/LC03.06/properties
