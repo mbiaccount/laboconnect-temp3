@@ -101,9 +101,12 @@ metadata:
   name: jboss
 #  namespace: lc
 spec:
+  initContainers:
+  - name: init-jboss
+    image:  "{{ .Values.jboss.repository }}:{{ .Values.jboss.tag }}"
+    command: [ 'sh', '-c', 'sleep 25;']
   containers:
   - name: jboss
-   #image: docker-01.progi.loc:5000/dev/laboconnect:LC03.06mbi
     image: "{{ .Values.jboss.repository }}:{{ .Values.jboss.tag }}"
     imagePullPolicy: {{ .Values.jboss.pullPolicy | quote }}
     ports:
