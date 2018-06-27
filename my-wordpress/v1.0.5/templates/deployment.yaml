@@ -53,7 +53,7 @@ spec:
   initContainers:
   - name: init-postgres
     image:  "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
-    command: [ 'sh', '-c', 'scp dlsante@cis-docker:/home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}} {{.Values.arb }}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}' ]
+    command: [ 'sh', '-c', 'scp dlsante@cis-docker:/home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2 {{.Values.arb }}/dlsante/volumes/laboconnect/ ; tar -xvf {{.Values.VersionLaboconnect}}.tar.bz2' ]
   containers:
   - name: postgres
     image: "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
