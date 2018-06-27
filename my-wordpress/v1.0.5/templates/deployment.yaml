@@ -32,8 +32,8 @@ spec:
     volumeMounts:
     - mountPath: /etc/localtime
       name: localtime
-#  nodeSelector:
-#    kubernetes.io/hostname: {{ .Values.nodes }}
+  nodeSelector:
+    kubernetes.io/hostname: {{ .Values.nodes }}
   {{- if .Values.httpd.pullSecrets }}
   imagePullSecrets:
   {{- range .Values.httpd.pullSecrets }}
@@ -77,6 +77,8 @@ spec:
       mountPath: /usr/share/zoneinfo
     - name: postgresql
       mountPath: /var/lib/pgsql/data
+  nodeSelector:
+    kubernetes.io/hostname: {{ .Values.nodes }}
   {{- if .Values.httpd.pullSecrets }}
   imagePullSecrets:
   {{- range .Values.httpd.pullSecrets }}
@@ -142,6 +144,8 @@ spec:
       name: zoneinfo
     - mountPath: /usr/build
       name: ip
+  nodeSelector:
+    kubernetes.io/hostname: {{ .Values.nodes }}
   {{- if .Values.httpd.pullSecrets }}
   imagePullSecrets:
   {{- range .Values.httpd.pullSecrets }}
