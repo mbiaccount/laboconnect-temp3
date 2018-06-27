@@ -89,12 +89,12 @@ questions:
 #    description: "password will be auto-generated if not specified"
 #    type: password
 #    label: POSTGRES Password
-  - group: "database settings"
-    variable: pass_mss_ro
-    default: "ue6mqsR5uy9"
-    description: "password will be auto-generated if not specified"
-    type: password
-    label: MSS Ro
+- group: "database settings"
+  variable: pass_mss_ro
+  default: "ue6mqsR5uy9"
+  description: "password will be auto-generated if not specified"
+  type: password
+  label: MSS Ro
 #  - group: "database settings"
 #    variable: pass_mss_rw
 #    default: "4jwf4t5az1"
