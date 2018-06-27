@@ -67,8 +67,14 @@ spec:
       value: {{ .Values.node }}
     - name: JBOSS_HOST
       value: {{ .Values.node }}
-    - name: JBOSS_HOST
+    - name: POSTGRES_PASSWORD
       value: {{ .Values.postgres.password }}
+    - name: PASS_LC
+      value: {{.Values.pass_lc }}
+    - name: PASS_MSS_RO
+      value: {{.Values.pass_ro }}
+    - name: PASS_MSS_RW
+      value: {{.Values.pass_rw }}
     envFrom:
     - secretRef:
         name: envfile
@@ -124,8 +130,14 @@ spec:
       value: {{ .Values.node }}
     - name: JBOSS_HOST
       value: {{ .Values.node }}
-    - name: JBOSS_HOST
+    - name: POSTGRES_PASSWORD
       value: {{ .Values.postgres.password }}
+    - name: PASS_LC
+      value: {{.Values.pass_lc }}
+    - name: PASS_MSS_RO
+      value: {{.Values.pass_mss_ro }}
+    - name: PASS_MSS_RW
+      value: {{.Values.pass_mss_rw }}
     envFrom:
     - secretRef:
         name: envfile
@@ -190,9 +202,9 @@ kind: Secret
 metadata:
   name: envfile
 data:
-  PASS_LC: UUJ3WjRISmJXdg==
-  PASS_MSS_RO: a1VqRWpoTmEyOA==
-  PASS_MSS_RW: ZDNUTTk2dlRuMQ==
+  #PASS_LC: UUJ3WjRISmJXdg==
+  #PASS_MSS_RO: a1VqRWpoTmEyOA==
+  #PASS_MSS_RW: ZDNUTTk2dlRuMQ==
   HTTPD_HOST: aHR0cGQx
   MESSAGES: ZmFsc2U=
   DOCKER_USER_UID: MTAwMA==
