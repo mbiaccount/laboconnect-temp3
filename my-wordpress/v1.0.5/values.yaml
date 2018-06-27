@@ -15,13 +15,13 @@ jboss:
   tag: LC03.06mbi
   pullPolicy: IfNotPresent
 
-env:
-  httphost: docker-01
-  postgreshost: docker-01
-  jbosshost: docker-01
+#env:
+#  httphost: docker-01
+#  postgreshost: docker-01
+#  jbosshost: docker-01
 wordpressUsername: user
 
-nodes: docker-01
+node: docker-01
 
 externalDatabase:
   ## Database host

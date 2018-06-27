@@ -47,13 +47,6 @@ questions:
 
 # HTTPD SETTING ----------------------------------------------------------------------------------------------------
 - group: "frontal web settings"
-  variable: env.httphost
-  default: "docker-01"
-  description: "FQDN of the host"
-  type: string
-  required: true
-  label: Frontal web host
-- group: "frontal web settings"
   variable: nodePorts.https
   default: "30111"
   description: "port you use to access application (browser)"
@@ -66,9 +59,9 @@ questions:
   type: string
   label: NodePort for external endpoint
 - group: "frontal web settings"
-  variable: nodes
+  variable: node
   default: "docker-01"
-  description: "Node that support the module"
+  description: "Node that support the module; It will also serve as your http host variable."
   type: enum
   options:
     - "kubernetes-01"
@@ -82,12 +75,6 @@ questions:
   description: "postgres port"
   type: string
   label: Access port
-- group: "database settings"
-  variable: env.postgreshost
-  default: "docker-01"
-  description: "postgres host"
-  type: string
-  label: postgres host       
 - group: "database settings"
   variable: mariadb.mariadbDatabase
   default: "postgres"
@@ -129,12 +116,6 @@ questions:
     label: Default StorageClass for MariaDB
 
 # LABOCONNECT-------------------------------------------------------------------------------------------------------
-- group: "LABOCONNECT Settings"
-  variable: env.jbosshost
-  default: "docker-01"
-  description: "Jboss hostname"
-  type: string
-  label: "Jboss hostname" 
 
 # OTHERTHING--------------------------------------------------------------------------------------------------------
 #- variable: serviceType

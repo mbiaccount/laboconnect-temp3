@@ -21,11 +21,11 @@ spec:
       containerPort: 6666
     env:
     - name: HTTPD_VHOST
-      value: {{ .Values.env.httphost }}
+      value: {{ .Values.node }}
     - name: BDD_HOST
-      value: {{ .Values.env.jbosshost }}
+      value: {{ .Values.node }}
     - name: JBOSS_HOST
-      value: {{ .Values.env.postgreshost }}
+      value: {{ .Values.node }}
     envFrom:
     - secretRef:
         name: envfile
@@ -62,11 +62,11 @@ spec:
       containerPort: 5432
     env:
     - name: HTTPD_VHOST
-      value: {{ .Values.env.httphost }}
+      value: {{ .Values.node }}
     - name: BDD_HOST
-      value: {{ .Values.env.jbosshost }}
+      value: {{ .Values.node }}
     - name: JBOSS_HOST
-      value: {{ .Values.env.postgreshost }}
+      value: {{ .Values.node }}
     envFrom:
     - secretRef:
         name: envfile
@@ -115,11 +115,11 @@ spec:
       containerPort: 7070
     env:
     - name: HTTPD_VHOST
-      value: {{ .Values.env.httphost }}
+      value: {{ .Values.node }}
     - name: BDD_HOST
-      value: {{ .Values.env.jbosshost }}
+      value: {{ .Values.node }}
     - name: JBOSS_HOST
-      value: {{ .Values.env.postgreshost }}
+      value: {{ .Values.node }}
     envFrom:
     - secretRef:
         name: envfile
