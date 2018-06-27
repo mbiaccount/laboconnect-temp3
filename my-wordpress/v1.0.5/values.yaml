@@ -47,6 +47,8 @@ externalDatabase:
   ## Database port number
   port: 3306
 
+defaultpasswords: True
+
 mariadb:
   repository: docker-01.progi.loc:5000/dev/postgres-lc
   tag: latest
