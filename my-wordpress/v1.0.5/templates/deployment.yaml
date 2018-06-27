@@ -174,13 +174,13 @@ spec:
       path: /etc/localtime
   - name: messages
     hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/ {{ .Values.VersionLaboconnect }} /messages/
+      path: /home/dlsante/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/messages/
   - name: jboss-controller-log
     hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/ {{ .Values.VersionLaboconnect }} /jboss-controller-log/
+      path: /home/dlsante/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-controller-log/
   - name: jboss-log
     hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/ {{ .Values.VersionLaboconnect }} /jboss-log
+      path: /home/dlsante/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-log
   - name: laboconnect
     hostPath:
       path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/laboconnect/
@@ -195,7 +195,7 @@ spec:
       path: /usr/share/zoneinfo
   - name: ip
     hostPath:
-      path: /root/dlsante/volumes/laboconnect/ {{ .Values.VersionLaboconnect }} /IP
+      path: /root/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/IP
 ---
 apiVersion: v1
 kind: Secret
