@@ -2,48 +2,40 @@ categories:
 - Blog
 - CMS
 questions:
-- variable: defaultImage
-  default: "true"
-  description: "Use default Docker image"
-  label: Use Default Image
-  type: boolean
-  show_subquestion_if: false
-  group: "Images"
-  subquestions:
-  - group: "Images"
-    variable: httpd.repository
-    default: "docker-01.progi.loc:5000/dev/httpd-lc2"
-    description: "HTTPD image"
-    type: string
-    label: HTTPD Image Name
-  - group: "Images"
-    variable: httpd.tag
-    default: "latest"
-    description: "WordPress image tag"
-    type: string
-    label: HTTPD Image Tag
+- group: "Images"
+  variable: httpd.repository
+  default: "docker-01.progi.loc:5000/dev/httpd-lc2"
+  description: "HTTPD image"
+  type: string
+  label: HTTPD Image Name
+- group: "Images"
+  variable: httpd.tag
+  default: "latest"
+  description: "WordPress image tag"
+  type: string
+  label: HTTPD Image Tag
 #----------------------------------------------postgres--------------------------------------------------------------
-  - variable: mariadb.repository
-    default: "docker-01.progi.loc:5000/dev/postgres-lc"
-    description: "POSTGRES image name"
-    type: string
-    label: POSTGRES image name
-  - variable: mariadb.tag
-    default: "latest"
-    description: "MariaDB image tag"
-    type: string
-    label: POSTGRES Image Tag
+- variable: mariadb.repository
+  default: "docker-01.progi.loc:5000/dev/postgres-lc"
+  description: "POSTGRES image name"
+  type: string
+  label: POSTGRES image name
+- variable: mariadb.tag
+  default: "latest"
+  description: "MariaDB image tag"
+  type: string
+  label: POSTGRES Image Tag
 #---------------------------------------------Jboss------------------------------------------------------------------
-  - variable: jboss.repository
-    default: "docker-01.progi.loc:5000/dev/laboconnect"
-    description: "laboconnect image name"
-    type: string
-    label: laboconnect image name
-  - variable: jboss.tag
-    default: "LC03.06mbi"
-    description: "laboconnect image tag"
-    type: string
-    label: Jboss Image Tag
+- variable: jboss.repository
+  default: "docker-01.progi.loc:5000/dev/laboconnect"
+  description: "laboconnect image name"
+  type: string
+  label: laboconnect image name
+- variable: jboss.tag
+  default: "LC03.06mbi"
+  description: "laboconnect image tag"
+  type: string
+  label: Jboss Image Tag
 #---------------------------------------- HTTPD SETTING -------------------------------------------------------------
 - group: "frontal web settings"
   variable: nodePorts.https
