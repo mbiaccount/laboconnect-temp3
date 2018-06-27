@@ -32,8 +32,8 @@ spec:
     volumeMounts:
     - mountPath: /etc/localtime
       name: localtime
-  nodeSelector:
-    kubernetes.io/hostname: {{ .Values.nodes }}
+#  nodeSelector:
+#    kubernetes.io/hostname: {{ .Values.nodes }}
   {{- if .Values.httpd.pullSecrets }}
   imagePullSecrets:
   {{- range .Values.httpd.pullSecrets }}
