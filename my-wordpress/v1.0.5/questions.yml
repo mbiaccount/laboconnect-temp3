@@ -75,51 +75,34 @@ questions:
   type: string
   label: Access port
 
-questions:
-- variable: defaultImage
+- variable: defaultpasswords
   default: "true"
-  description: "Use default Docker image"
-  label: Use Default Image
+  description: "Use default passwords ?"
+  label: Change the passwords
   type: boolean
   show_subquestion_if: false
-  group: "Images"
+  group: "database settings"
   subquestions:
-  - group: "Images"
-    variable: httpd.repository
-    default: "docker-01.progi.loc:5000/dev/httpd-lc2"
-    description: "HTTPD image"
-    type: string
-    label: HTTPD Image Name
-
-#questions:
-#- variable: defaultpasswords
-#  default: "true"
-#  description: "Use default passwords ?"
-#  label: Change the passwords
-#  type: boolean
-#  show_subquestion_if: false
-#  group: "database settings"
-#  subquestions:
-#  - variable: postgres.password
-#    default: "KuFM4LMylb"
-#    description: "password will be auto-generated if not specified"
-#    type: password
-#    label: POSTGRES Password
-#- group: "database settings"
-#  variable: pass_mss_ro
-#  default: "ue6mqsR5uy9"
-#  description: "password will be auto-generated if not specified"
-#  type: password
-#  label: MSS Ro
-#  - group: "database settings"
-#    variable: pass_mss_rw
-#    default: "4jwf4t5az1"
-#    description: "password will be auto-generated if not specified"
-#    type: password
-#    label: MSS Rw
-#  - group: "database settings"
-#    variable: pass_lc
-#    default: "rpmhamonu1g"
-#    description: "password will be auto-generated if not specified"
-#    type: password
-#    label: Pass Lc
+  - variable: postgres.password
+    default: "KuFM4LMylb"
+    description: "password will be auto-generated if not specified"
+    type: password
+    label: POSTGRES Password
+  - group: "database settings"
+    variable: pass_mss_ro
+    default: "ue6mqsR5uy9"
+    description: "password will be auto-generated if not specified"
+    type: password
+    label: MSS Ro
+  - group: "database settings"
+    variable: pass_mss_rw
+    default: "4jwf4t5az1"
+    description: "password will be auto-generated if not specified"
+    type: password
+    label: MSS Rw
+  - group: "database settings"
+    variable: pass_lc
+    default: "rpmhamonu1g"
+    description: "password will be auto-generated if not specified"
+    type: password
+    label: Pass Lc
