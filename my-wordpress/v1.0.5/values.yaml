@@ -23,14 +23,9 @@ pass_lc: random1
 pass_mss_rw: random2
 pass_mss_ro: random3
 
-#env:
-#  httphost: docker-01
-#  postgreshost: docker-01
-#  jbosshost: docker-01
-wordpressUsername: user
-
 node: docker-01
 
+VersionLaboconnect: LC03.06
 externalDatabase:
   ## Database host
   host: localhost

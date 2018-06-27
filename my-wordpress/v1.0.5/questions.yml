@@ -102,3 +102,16 @@ questions:
     description: "password will be auto-generated if not specified"
     type: password
     label: Pass Lc
+#------------------------------------------------------------------------------------------------------------Volumes
+- group: "volumes"
+  variable: VersionLaboconnect 
+  default: "LC03.06"
+  description: "Version that your paths will use"
+  type: string
+  label: LaboConnect Version
+- group: "volumes"
+  variable: 
+  default: "/root/dlsante"
+  description: "beginig of your relative path"
+  type: string
+  label: Father Directory of your volumes
