@@ -101,7 +101,7 @@ spec:
       path: "/usr/share/zoneinfo"
     name: zoneinfo
   - hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/postgresql
+      path: /home/dlsante/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/postgresql
     name: postgresql
 ---
 kind: Pod
@@ -158,8 +158,8 @@ spec:
       name: sql
     - mountPath: "/usr/share/zoneinfo"
       name: zoneinfo
-    - mountPath: /usr/build
-      name: ip
+#    - mountPath: /usr/build
+#      name: ip
   nodeSelector:
     kubernetes.io/hostname: {{ .Values.node }}
   {{- if .Values.httpd.pullSecrets }}
@@ -174,28 +174,28 @@ spec:
       path: /etc/localtime
   - name: messages
     hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/messages/
+      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/messages/
   - name: jboss-controller-log
     hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-controller-log/
+      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-controller-log/
   - name: jboss-log
     hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-log
+      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-log
   - name: laboconnect
     hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/laboconnect/
+      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/laboconnect/
   - name: properties
     hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/properties
+      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/properties
   - name: sql
     hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/sql
+      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/sql
   - name: zoneinfo
     hostPath:
       path: /usr/share/zoneinfo
-  - name: ip
-    hostPath:
-      path: /root/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/IP
+#  - name: ip
+#    hostPath:
+#      path: /root/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/IP
 ---
 apiVersion: v1
 kind: Secret

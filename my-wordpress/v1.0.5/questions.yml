@@ -110,8 +110,8 @@ questions:
   type: string
   label: LaboConnect Version
 - group: "volumes"
-  variable: 
-  default: "/root/dlsante"
+  variable: arb
+  default: "/home/dlsante"
   description: "beginig of your relative path"
   type: string
   label: Father Directory of your volumes
