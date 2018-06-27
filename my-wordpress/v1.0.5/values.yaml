@@ -17,7 +17,7 @@ jboss:
 
 postgres:
   password: KuFM4LMylb
-  port: 30435
+  port: 5433 
 
 pass_lc: random1
 pass_mss_rw: random2
