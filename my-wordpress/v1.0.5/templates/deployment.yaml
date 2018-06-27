@@ -101,7 +101,7 @@ spec:
       path: "/usr/share/zoneinfo"
     name: zoneinfo
   - hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/postgresql
+      path: {{.Values.arb}}dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/postgresql
     name: postgresql
 ---
 kind: Pod
