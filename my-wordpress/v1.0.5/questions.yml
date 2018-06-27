@@ -77,7 +77,7 @@ questions:
   label: Access port
 
 questions:
-- variable: defaultImage
+- variable: defaultpasswords
   default: "true"
   description: "Use default passwords ?"
   label: Change the passwords
