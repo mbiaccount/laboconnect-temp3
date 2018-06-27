@@ -76,18 +76,6 @@ questions:
   type: string
   label: Access port
 - group: "database settings"
-  variable: mariadb.mariadbDatabase
-  default: "postgres"
-  description: "Database name to create"
-  type: string
-  label: POSTGRES Database
-- group: "database settings"
-  variable: mariadb.mariadbUser
-  default: "postgres"
-  description: "Database user to create"
-  type: string
-  label: POSTGRES User
-- group: "database settings"
   variable: mariadb.mariadbPassword
   default: ""
   description: "password will be auto-generated if not specified"
