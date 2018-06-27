@@ -32,7 +32,8 @@ spec:
     volumeMounts:
     - mountPath: /etc/localtime
       name: localtime
-# httpd secret                         ---------------------------------
+  nodeSelector:
+    kubernetes.io/hostname: {{ .Values.nodes }}
   {{- if .Values.httpd.pullSecrets }}
   imagePullSecrets:
   {{- range .Values.httpd.pullSecrets }}
@@ -184,10 +185,7 @@ data:
   PASS_LC: UUJ3WjRISmJXdg==
   PASS_MSS_RO: a1VqRWpoTmEyOA==
   PASS_MSS_RW: ZDNUTTk2dlRuMQ==
-  #JBOSS_HOST: amJvc3Mx
-  #BDD_HOST: cG9zdGdyZXMx
   HTTPD_HOST: aHR0cGQx
-  #HTTPD_VHOST: ZG9ja2VyLTAx
   MESSAGES: ZmFsc2U=
   DOCKER_USER_UID: MTAwMA==
   DOCKER_USER_GID: MTAwMA==
@@ -195,6 +193,4 @@ data:
   POSTGRES_PASSWORD: S3VGTTRMTXlsYg==
   POSTGRES_UID: MTAwMA==
   POSTGRES_GID: MTAwMA==
-  #VSFTPD_PASV_MIN_PORT: 49152
-  #VSFTPD_PASV_MAX_PORT: 49251
   VSFTPD_LISTEN_PORT: MTAwMjE=

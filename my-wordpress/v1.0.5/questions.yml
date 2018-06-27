@@ -65,6 +65,16 @@ questions:
   description: "nobody understand"
   type: string
   label: NodePort for external endpoint
+- group: "frontal web settings"
+  variable: nodes
+  default: "docker-01"
+  description: "Node that support the module"
+  type: enum
+  show_if: "ingress.enabled=false"
+  options:
+    - "kubernetes-01"
+    - "docker-01"
+  label: Node you're working on
 
 # POSTGRES SETTING -------------------------------------------------------------------------------------------------
 - group: "database settings"
