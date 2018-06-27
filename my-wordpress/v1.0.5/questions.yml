@@ -76,21 +76,21 @@ questions:
   type: string
   label: Access port
 
-#questions:
-#- variable: defaultpasswords
-#  default: "true"
-#  description: "Use default passwords ?"
-#  label: Change the passwords
-#  type: boolean
-#  show_subquestion_if: false
-#  group: "database settings"
-#  subquestions:
-#  - group: "database settings"
-#    variable: postgres.password
-#    default: "KuFM4LMylb"
-#    description: "password will be auto-generated if not specified"
-#    type: password
-#    label: POSTGRES Password
+questions:
+- variable: defaultpasswords
+  default: "true"
+  description: "Use default passwords ?"
+  label: Change the passwords
+  type: boolean
+  show_subquestion_if: false
+  group: "database settings"
+  subquestions:
+  - group: "database settings"
+    variable: postgres.password
+    default: "KuFM4LMylb"
+    description: "password will be auto-generated if not specified"
+    type: password
+    label: POSTGRES Password
 #  - group: "database settings"
 #    variable: pass_mss_ro
 #    default: "ue6mqsR5uy9"
