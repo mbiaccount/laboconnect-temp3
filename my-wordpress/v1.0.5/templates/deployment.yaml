@@ -177,7 +177,7 @@ spec:
       path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/messages/
   - name: jboss-controller-log
     hostPath:
-      path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/jboss-controller-log/
+      path: /home/dlsante/dlsante/volumes/laboconnect/ {{ .Values.VersionLaboconnect }} /jboss-controller-log/
   - name: jboss-log
     hostPath:
       path: /home/dlsante/dlsante/volumes/laboconnect/LC03.06/jboss-log
@@ -195,22 +195,18 @@ spec:
       path: /usr/share/zoneinfo
   - name: ip
     hostPath:
-      path: /root/dlsante/volumes/laboconnect/LC03.06/IP
+      path: /root/dlsante/volumes/laboconnect/ {{ .Values.VersionLaboconnect }} /IP
 ---
 apiVersion: v1
 kind: Secret
 metadata:
   name: envfile
 data:
-  #PASS_LC: UUJ3WjRISmJXdg==
-  #PASS_MSS_RO: a1VqRWpoTmEyOA==
-  #PASS_MSS_RW: ZDNUTTk2dlRuMQ==
   HTTPD_HOST: aHR0cGQx
   MESSAGES: ZmFsc2U=
   DOCKER_USER_UID: MTAwMA==
   DOCKER_USER_GID: MTAwMA==
   CXF_LOGGING: dHJ1ZQ==
-  #POSTGRES_PASSWORD: S3VGTTRMTXlsYg==
   POSTGRES_UID: MTAwMA==
   POSTGRES_GID: MTAwMA==
   VSFTPD_LISTEN_PORT: MTAwMjE=
