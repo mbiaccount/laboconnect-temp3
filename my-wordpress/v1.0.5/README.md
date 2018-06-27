@@ -10,12 +10,15 @@ In order to deploy an application, you'll have to pull containers images from a 
 $ kubectl get secret --all-namespaces
 ```
 
-The things below doesn't match with LaboConnect deployment
+## Explanations
 
-## Introduction
+The actual deployment launch 3 modules which are:
+>  **HTTPD**: The frontal web.
+> **Postgres**: The Data Base.
+> **jBoss**: The LaboConnect application itself.
 
+You'll have to choose the access port of you frontal web. The app will be accessed by the following url : `https://<hostname|ip>:<port>`
 
-## Installing the Chart
 
 To install the chart with the release name `my-release`:
 
