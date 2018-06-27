@@ -22,7 +22,7 @@ questions:
     description: "WordPress image tag"
     type: string
     label: HTTPD Image Tag
-#postgres ----------------------------------------------------------------------------------------------------------
+#----------------------------------------------postgres--------------------------------------------------------------
   - variable: mariadb.repository
     default: "docker-01.progi.loc:5000/dev/postgres-lc"
     description: "POSTGRES image name"
@@ -33,7 +33,7 @@ questions:
     description: "MariaDB image tag"
     type: string
     label: POSTGRES Image Tag
-#Jboss -------------------------------------------------------------------------------------------------------------
+#---------------------------------------------Jboss------------------------------------------------------------------
   - variable: jboss.repository
     default: "docker-01.progi.loc:5000/dev/laboconnect"
     description: "laboconnect image name"
@@ -44,8 +44,7 @@ questions:
     description: "laboconnect image tag"
     type: string
     label: Jboss Image Tag
-
-# HTTPD SETTING ----------------------------------------------------------------------------------------------------
+#---------------------------------------- HTTPD SETTING -------------------------------------------------------------
 - group: "frontal web settings"
   variable: nodePorts.https
   default: "30111"
@@ -85,8 +84,7 @@ questions:
   show_subquestion_if: false
   group: "database settings"
   subquestions:
-  - group: "database settings"
-    variable: postgres.password
+  - variable: postgres.password
     default: "KuFM4LMylb"
     description: "password will be auto-generated if not specified"
     type: password
