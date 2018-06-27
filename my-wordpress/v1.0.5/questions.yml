@@ -75,53 +75,37 @@ questions:
   description: "postgres port"
   type: string
   label: Access port
-- group: "database settings"
-  variable: postgres.password
-  default: "KuFM4LMylb"
-  description: "password will be auto-generated if not specified"
-  type: password
-  label: POSTGRES Password
 
-- group: "database settings"
-  variable: pass_mss_ro
-  default: "ue6mqsR5uy9"
-  description: "password will be auto-generated if not specified"
-  type: password
-  label: MSS Ro
-
-- group: "database settings"
-  variable: pass_mss_rw
-  default: "4jwf4t5az1"
-  description: "password will be auto-generated if not specified"
-  type: password
-  label: MSS Rw
-
-- group: "database settings"
-  variable: pass_lc
-  default: "rpmhamonu1g"
-  description: "password will be auto-generated if not specified"
-  type: password
-  label: Pass Lc
-
-
-- variable: mariadb.persistence.enabled
-  default: "false"
-  description: "Enable persistent volume for MariaDB"
+questions:
+- variable: defaultImage
+  default: "true"
+  description: "Use default passwords ?"
+  label: Change the passwords
   type: boolean
-  required: true
-  label: MariaDB Persistent Volume Enabled
-  show_if: "mariadb.enabled=true"
-  show_subquestion_if: true
-  group: "Database Settings"
+  show_subquestion_if: false
+  group: "database settings"
   subquestions:
-  - variable: mariadb.persistence.size
-    default: "8Gi"
-    description: "MariaDB Persistent Volume Size"
-    type: string
-    label: MariaDB Volume Size
-  - variable: mariadb.persistence.storageClass
-    default: ""
-    description: "If undefined or null, uses the default StorageClass. Default to null"
-    type: storageclass
-    label: Default StorageClass for MariaDB
-
+  - group: "database settings"
+    variable: postgres.password
+    default: "KuFM4LMylb"
+    description: "password will be auto-generated if not specified"
+    type: password
+    label: POSTGRES Password
+  - group: "database settings"
+    variable: pass_mss_ro
+    default: "ue6mqsR5uy9"
+    description: "password will be auto-generated if not specified"
+    type: password
+    label: MSS Ro
+  - group: "database settings"
+    variable: pass_mss_rw
+    default: "4jwf4t5az1"
+    description: "password will be auto-generated if not specified"
+    type: password
+    label: MSS Rw
+  - group: "database settings"
+    variable: pass_lc
+    default: "rpmhamonu1g"
+    description: "password will be auto-generated if not specified"
+    type: password
+    label: Pass Lc
