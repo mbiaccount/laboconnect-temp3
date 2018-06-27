@@ -70,7 +70,6 @@ questions:
   default: "docker-01"
   description: "Node that support the module"
   type: enum
-  show_if: "ingress.enabled=false"
   options:
     - "kubernetes-01"
     - "docker-01"
