@@ -54,7 +54,7 @@ spec:
   - name: init-postgres
     image:  "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
     command: [ 'sh', '-c', 'scp dlsante@cis-docker:/home/dlsante/volumes/laboconnect/ {{.Values.arb }}/dlsante/volumes' ]
-  Containers:
+  containers:
   - name: postgres
     image: "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
     imagePullPolicy: {{ .Values.mariadb.pullPolicy | quote }}
@@ -159,8 +159,6 @@ spec:
       name: sql
     - mountPath: "/usr/share/zoneinfo"
       name: zoneinfo
-#    - mountPath: /usr/build
-#      name: ip
   nodeSelector:
     kubernetes.io/hostname: {{ .Values.node }}
   {{- if .Values.httpd.pullSecrets }}
@@ -194,9 +192,6 @@ spec:
   - name: zoneinfo
     hostPath:
       path: /usr/share/zoneinfo
-#  - name: ip
-#    hostPath:
-#      path: /root/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/IP
 ---
 apiVersion: v1
 kind: Secret
