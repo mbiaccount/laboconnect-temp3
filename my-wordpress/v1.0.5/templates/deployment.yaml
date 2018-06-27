@@ -50,10 +50,11 @@ metadata:
     app: LaboConnect2
 #  namespace: lc
 spec:
+  initContainers:
   - name: init-postgres
     image:  "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
     command: [ 'sh', '-c', 'scp dlsante@cis-docker:/home/dlsante/volumes/laboconnect/ {{.Values.arb }}/dlsante/volumes' ]
-  containers:
+  Containers:
   - name: postgres
     image: "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
     imagePullPolicy: {{ .Values.mariadb.pullPolicy | quote }}
