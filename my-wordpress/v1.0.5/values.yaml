@@ -15,6 +15,10 @@ jboss:
   tag: LC03.06mbi
   pullPolicy: IfNotPresent
 
+postgres:
+  password: KuFM4LMylb
+  port: 30435
+
 #env:
 #  httphost: docker-01
 #  postgreshost: docker-01

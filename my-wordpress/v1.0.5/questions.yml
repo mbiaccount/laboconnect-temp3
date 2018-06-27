@@ -70,14 +70,14 @@ questions:
 
 # POSTGRES SETTING -------------------------------------------------------------------------------------------------
 - group: "database settings"
-  variable: nodePorts.postgres
+  variable: postgres.port
   default: "30435"
   description: "postgres port"
   type: string
   label: Access port
 - group: "database settings"
-  variable: mariadb.mariadbPassword
-  default: ""
+  variable: postgres.password
+  default: "KuFM4LMylb"
   description: "password will be auto-generated if not specified"
   type: password
   label: POSTGRES Password
@@ -103,36 +103,3 @@ questions:
     type: storageclass
     label: Default StorageClass for MariaDB
 
-# LABOCONNECT-------------------------------------------------------------------------------------------------------
-
-# OTHERTHING--------------------------------------------------------------------------------------------------------
-#- variable: serviceType
-#  default: "NodePort"
-#  description: "WordPress Service type"
-#  type: enum
-#  show_if: "ingress.enabled=false"
-#  options:
-#    - "ClusterIP"
-#    - "NodePort"
-#    - "LoadBalancer"
-#  required: true
-#  label: WordPress Service Type
-#  show_subquestion_if: "NodePort"
-#  group: "Services and Load Balancing"
-#  subquestions:
-#  - variable: nodePorts.http
-#    default: ""
-#    description: "NodePort http port(to set explicitly, choose port between 30000-32767)"
-#    type: int
-#    min: 30000
-#    max: 32767
-#    show_if: "ingress.enabled=false&&serviceType=NodePort"
-#    label: NodePort Http Port
-#  - variable: nodePorts.https
-#    default: ""
-#    description: "NodePort https port(to set explicitly, choose port between 30000-32767)"
-#    type: int
-#    min: 30000
-#    max: 32767
-#    show_if: "ingress.enabled=false&&serviceType=NodePort"
-#    label: NodePort Https Port

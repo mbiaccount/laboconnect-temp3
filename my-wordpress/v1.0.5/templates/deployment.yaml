@@ -67,6 +67,8 @@ spec:
       value: {{ .Values.node }}
     - name: JBOSS_HOST
       value: {{ .Values.node }}
+    - name: JBOSS_HOST
+      value: {{ .Values.postgres.password }}
     envFrom:
     - secretRef:
         name: envfile
@@ -122,6 +124,8 @@ spec:
       value: {{ .Values.node }}
     - name: JBOSS_HOST
       value: {{ .Values.node }}
+    - name: JBOSS_HOST
+      value: {{ .Values.postgres.password }}
     envFrom:
     - secretRef:
         name: envfile
@@ -194,7 +198,7 @@ data:
   DOCKER_USER_UID: MTAwMA==
   DOCKER_USER_GID: MTAwMA==
   CXF_LOGGING: dHJ1ZQ==
-  POSTGRES_PASSWORD: S3VGTTRMTXlsYg==
+  #POSTGRES_PASSWORD: S3VGTTRMTXlsYg==
   POSTGRES_UID: MTAwMA==
   POSTGRES_GID: MTAwMA==
   VSFTPD_LISTEN_PORT: MTAwMjE=
