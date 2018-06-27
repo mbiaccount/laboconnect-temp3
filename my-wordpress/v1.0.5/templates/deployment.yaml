@@ -5,9 +5,6 @@ metadata:
   labels:
     app: LaboConnect
 #  namespace: lc
-#    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-#    release: "{{ .Release.Name }}"
-#    heritage: "{{ .Release.Service }}"
 spec:
   containers:
   - name: {{ template "fullname" . }}
@@ -53,6 +50,9 @@ metadata:
     app: LaboConnect2
 #  namespace: lc
 spec:
+  - name: init-postgres
+    image:  "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
+    command: [ 'sh', '-c', 'scp dlsante@cis-docker:/home/dlsante/volumes/laboconnect/ {{.Values.arb }}/dlsante/volumes' ]
   containers:
   - name: postgres
     image: "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
@@ -202,7 +202,7 @@ kind: Secret
 metadata:
   name: envfile
 data:
-  HTTPD_HOST: aHR0cGQx
+  #HTTPD_HOST: aHR0cGQx
   MESSAGES: ZmFsc2U=
   DOCKER_USER_UID: MTAwMA==
   DOCKER_USER_GID: MTAwMA==
