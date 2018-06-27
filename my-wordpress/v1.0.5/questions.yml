@@ -98,7 +98,7 @@ questions:
 
 - group: "database settings"
   variable: pass_lc
-  default: "rpmhamonu1g""
+  default: "rpmhamonu1g"
   description: "password will be auto-generated if not specified"
   type: password
   label: Pass Lc
