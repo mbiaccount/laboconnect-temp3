@@ -75,6 +75,22 @@ questions:
   type: string
   label: Access port
 
+questions:
+- variable: defaultImage
+  default: "true"
+  description: "Use default Docker image"
+  label: Use Default Image
+  type: boolean
+  show_subquestion_if: false
+  group: "Images"
+  subquestions:
+  - group: "Images"
+    variable: httpd.repository
+    default: "docker-01.progi.loc:5000/dev/httpd-lc2"
+    description: "HTTPD image"
+    type: string
+    label: HTTPD Image Name
+
 #questions:
 #- variable: defaultpasswords
 #  default: "true"
@@ -89,12 +105,12 @@ questions:
 #    description: "password will be auto-generated if not specified"
 #    type: password
 #    label: POSTGRES Password
-- group: "database settings"
-  variable: pass_mss_ro
-  default: "ue6mqsR5uy9"
-  description: "password will be auto-generated if not specified"
-  type: password
-  label: MSS Ro
+#- group: "database settings"
+#  variable: pass_mss_ro
+#  default: "ue6mqsR5uy9"
+#  description: "password will be auto-generated if not specified"
+#  type: password
+#  label: MSS Ro
 #  - group: "database settings"
 #    variable: pass_mss_rw
 #    default: "4jwf4t5az1"
