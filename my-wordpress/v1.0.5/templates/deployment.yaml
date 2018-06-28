@@ -15,7 +15,7 @@ spec:
     volumeMounts:
 #    - mountPath: /tmp/{{.Values.VersionLaboconnect}}.tar.bz2
 #      name: archive
-    - mountPath: /tmp/back
+    - mountPath: /tmp/back/
       name: arbo
   volumes:
 #  - name: archive
