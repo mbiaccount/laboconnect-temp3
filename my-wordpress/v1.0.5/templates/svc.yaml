@@ -7,10 +7,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - name: init
-      port: 6060
-      targetPort: 6060
-#      nodePort: 30333
+  - name: init
+    port: 6060
+    targetPort: 6060
   selector:
     app: init
 ---
