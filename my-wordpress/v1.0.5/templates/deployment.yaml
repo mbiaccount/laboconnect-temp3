@@ -13,17 +13,17 @@ spec:
     - name: init
       containerPort: 6060
     volumeMounts:
-    - mountPath: /tmp/{{.Values.VersionLaboconnect}}.tar.bz2
-      name: archive
-    - mountPath: /tmp/test
+#    - mountPath: /tmp/{{.Values.VersionLaboconnect}}.tar.bz2
+#      name: archive
+    - mountPath: /tmp/back
       name: arbo
   volumes:
-  - name: archive
-    hostPath:
-      path: /home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2
+#  - name: archive
+#    hostPath:
+#      path: /home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2
   - name: arbo
     hostPath:
-      path: /home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}
+      path: /home/dlsante/volumes/laboconnect/test
 #  ---------------------------------------------------------------------------------------------------------
 ---
 apiVersion: v1
