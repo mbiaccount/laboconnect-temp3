@@ -20,7 +20,7 @@ spec:
   volumes:
   - name: archive
     hostPath:
-      path: /home/dlsante/laboconnect/volumes/{{.Values.VersionLaboconnect}}.tar.bz2
+      path: /home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2
 #  - name: arbo
 #    hostPath:
 #      path: /home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}
