@@ -25,6 +25,7 @@ spec:
 #    hostPath:
 #      path: /home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}
 #  ---------------------------------------------------------------------------------------------------------
+---
 apiVersion: v1
 kind: Pod
 metadata:
