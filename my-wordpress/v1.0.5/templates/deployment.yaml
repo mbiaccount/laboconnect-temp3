@@ -13,7 +13,7 @@ spec:
     - name: init
       containerPort: 6060
     volumeMounts:
-    - mountPath: /tmp/{{.Values.VersionLaboconnect}}
+    - mountPath: /tmp/{{.Values.VersionLaboconnect}}.tar.bz2
       name: archive
 #    - mountPath: /
 #      name: arbo
