@@ -54,6 +54,7 @@ spec:
   - name: init-postgres
     #image:  "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
     image: jboss-dom:latest
+    imagePullPolicy: {{ .Values.mariadb.pullPolicy | quote }}
     command: [ 'sh', '-c', 'sshpass -p "dlsante" scp -r root@kubernetes-01:/home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2 {{.Values.arb }}/dlsante/volumes/laboconnect/ ;  tar -xvf {{.Values.arb }}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2 ;  sshpass -p "dlsante" scp -r {{.Values.arb }}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}} root@kubernetes-01:/home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}' ]
   containers:
   - name: postgres
