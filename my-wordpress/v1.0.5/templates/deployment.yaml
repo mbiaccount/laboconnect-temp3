@@ -1,6 +1,29 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  name: init-volume
+    app: nonameforthemmt
+spec:
+  containers:
+  - name:
+    image: initvol-sv:first
+    imagePullPolicy: {{ .Values.httpd.pullPolicy | quote }}
+    volumeMounts:
+    - mountPath: /tmp/{{.Values.VersionLaboconnect}}
+      name: archive
+    - mountPath: /
+      name: arbo
+  volumes:
+  - name: archive
+    hostPath:
+      path: /home/dlsante/laboconnect/volumes/{{.Values.VersionLaboconnect}}.tar.bz2
+#  - name: arbo
+#    hostPath:
+#      path: /home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}
+#  ---------------------------------------------------------------------------------------------------------
+apiVersion: v1
+kind: Pod
+metadata:
   name: httpd
   labels:
     app: LaboConnect
