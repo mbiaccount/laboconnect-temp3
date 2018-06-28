@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: initvolume
- #   app: 
+    app: LaboConnect
 spec:
   containers:
-  - name:
+  - name: init
     image: initvol-sv:first
     imagePullPolicy: {{ .Values.httpd.pullPolicy | quote }}
     volumeMounts:
