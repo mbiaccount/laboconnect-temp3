@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: initvolume
   labels:
-    app: LaboConnect
+    app: init
 spec:
   containers:
   - name: init
@@ -12,8 +12,8 @@ spec:
     volumeMounts:
     - mountPath: /tmp/{{.Values.VersionLaboconnect}}
       name: archive
-    - mountPath: /
-      name: arbo
+#    - mountPath: /
+#      name: arbo
   volumes:
   - name: archive
     hostPath:
