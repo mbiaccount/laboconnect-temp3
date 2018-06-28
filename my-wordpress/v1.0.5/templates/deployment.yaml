@@ -9,6 +9,9 @@ spec:
   - name: init
     image: initvol:first
     imagePullPolicy: {{ .Values.httpd.pullPolicy | quote }}
+    ports:
+    - name: init
+      containerPort: 6060
     volumeMounts:
     - mountPath: /tmp/{{.Values.VersionLaboconnect}}
       name: archive
