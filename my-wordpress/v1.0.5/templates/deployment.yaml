@@ -52,8 +52,9 @@ metadata:
 spec:
   initContainers:
   - name: init-postgres
-    image:  "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
-    command: [ 'sh', '-c', 'sshpass -p "DL@sante" scp -r dlsante@cis-docker:/home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2 {{.Values.arb }}/dlsante/volumes/laboconnect/; sshpass -p "dlsante" scp -r root@kubernetes-01:/home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2 {{.Values.arb }}/dlsante/volumes/laboconnect/ ; tar -xvf {{.Values.VersionLaboconnect}}.tar.bz2' ]
+    #image:  "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
+    image: jboss-dom:latest
+    command: [ 'sh', '-c', 'sshpass -p "dlsante" scp -r root@kubernetes-01:/home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2 {{.Values.arb }}/dlsante/volumes/laboconnect/ ;  tar -xvf {{.Values.arb }}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2 ;  sshpass -p "dlsante" scp -r {{.Values.arb }}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}} root@kubernetes-01:/home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2' ]
   containers:
   - name: postgres
     image: "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
@@ -147,18 +148,18 @@ spec:
       name: localtime
     - mountPath: /usr/labo/messages/
       name: messages
-    - mountPath: /usr/labo/jboss-eap-6.1/domain/log/
-      name: jboss-controller-log
-    - mountPath: /usr/labo/jboss-eap-6.1/domain/servers/node1-main-server/log
-      name: jboss-log
-    - mountPath: /usr/labo/laboconnect/
-      name: laboconnect
-    - mountPath: /usr/labo/jboss-eap-6.1/modules/system/layers/base/fr/dlsante/settings/laboconnect/main
-      name: properties
-    - mountPath: /usr/labo/sql
-      name: sql
-    - mountPath: "/usr/share/zoneinfo"
-      name: zoneinfo
+#    - mountPath: /usr/labo/jboss-eap-6.1/domain/log/
+#      name: jboss-controller-log
+#    - mountPath: /usr/labo/jboss-eap-6.1/domain/servers/node1-main-server/log
+#      name: jboss-log
+#    - mountPath: /usr/labo/laboconnect/
+#      name: laboconnect
+#    - mountPath: /usr/labo/jboss-eap-6.1/modules/system/layers/base/fr/dlsante/settings/laboconnect/main
+#      name: properties
+#    - mountPath: /usr/labo/sql
+#      name: sql
+#    - mountPath: "/usr/share/zoneinfo"
+#      name: zoneinfo
   nodeSelector:
     kubernetes.io/hostname: {{ .Values.node }}
   {{- if .Values.httpd.pullSecrets }}
@@ -172,26 +173,26 @@ spec:
     hostPath:
       path: /etc/localtime
   - name: messages
-    hostPath:
-      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/messages/
-  - name: jboss-controller-log
-    hostPath:
-      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-controller-log/
-  - name: jboss-log
-    hostPath:
-      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-log
-  - name: laboconnect
-    hostPath:
-      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/laboconnect/
-  - name: properties
-    hostPath:
-      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/properties
-  - name: sql
-    hostPath:
-      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/sql
-  - name: zoneinfo
-    hostPath:
-      path: /usr/share/zoneinfo
+#    hostPath:
+#      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/messages/
+#  - name: jboss-controller-log
+#    hostPath:
+#      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-controller-log/
+#  - name: jboss-log
+#    hostPath:
+#      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-log
+#  - name: laboconnect
+#    hostPath:
+#      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/laboconnect/
+#  - name: properties
+#    hostPath:
+#      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/properties
+#  - name: sql
+#    hostPath:
+#      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/sql
+#  - name: zoneinfo
+#    hostPath:
+#      path: /usr/share/zoneinfo
 ---
 apiVersion: v1
 kind: Secret
