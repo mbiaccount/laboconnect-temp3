@@ -9,7 +9,7 @@ spec:
   ports:
   - name: init
     port: 6060
-    nodePort: 6161
+    #nodePort: 
     targetPort: 6060
   selector:
     app: init
