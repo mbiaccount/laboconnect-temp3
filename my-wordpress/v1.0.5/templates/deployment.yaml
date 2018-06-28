@@ -23,7 +23,7 @@ spec:
 #      path: /home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}.tar.bz2
   - name: arbo
     hostPath:
-      path: /home/dlsante/volumes/laboconnect/test
+      path: /home/dlsante/volumes/laboconnect/test/
 #  ---------------------------------------------------------------------------------------------------------
 ---
 apiVersion: v1
