@@ -25,7 +25,7 @@ spec:
   type: NodePort
   ports:
     - name: https
-      port: 44{{.Values.numb + 3}}
+      port: addition{{ 440 + 3 }}
       targetPort: 443
       #nodePort: 30111
       {{- if (and (eq .Values.serviceType "NodePort") (not (empty .Values.nodePorts.https)))}}

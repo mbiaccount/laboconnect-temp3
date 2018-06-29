@@ -35,7 +35,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: httpd{{.Values.numb + 50}}
+  name: httpd{{.Values.numb}}
   labels:
     app: LaboConnect
   namespace: lc
