@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: init-sv
+  name: init-sv{{.Values.numb}}
   labels:
     app: init
 spec:
@@ -25,7 +25,7 @@ spec:
   type: NodePort
   ports:
     - name: https
-      port: 443
+      port: 44{{.Values.numb + 3}}
       targetPort: 443
       #nodePort: 30111
       {{- if (and (eq .Values.serviceType "NodePort") (not (empty .Values.nodePorts.https)))}}
@@ -39,7 +39,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgres-sv 
+  name: postgres-sv{{.Values.numb}}
 #  namespace: lc
   labels:
     app: Laboconnect2
@@ -59,7 +59,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: laboconnect-sv
+  name: laboconnect-sv{{.Values.numb}}
 #  namespace: lc
   labels:
     app: Laboconnect3
