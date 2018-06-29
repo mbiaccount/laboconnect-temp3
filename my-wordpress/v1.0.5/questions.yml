@@ -59,7 +59,7 @@ questions:
     label: image Jboss
   - group: "Images"
     variable: jboss.tag
-    default: "LC03.06mbi"
+    default: "LC03.06mbi2"
     description: "laboconnect image tag"
     type: string
     label: tag Jboss
