@@ -11,7 +11,6 @@ httpd:
 
 jboss:
   repository: docker-01.progi.loc:5000/dev/laboconnect
-  image: docker-01.progi.loc:5000/dev/laboconnect
   tag: LC03.06mbi
   pullPolicy: IfNotPresent
 
@@ -26,21 +25,6 @@ pass_mss_ro: random3
 node: docker-01
 
 VersionLaboconnect: LC03.06
-externalDatabase:
-  ## Database host
-  host: localhost
-
-  ## non-root Username for Wordpress Database
-  user: bn_wordpress
-
-  ## Database password
-  password: ""
-
-  ## Database name
-  database: bitnami_wordpress
-
-  ## Database port number
-  port: 3306
 
 defaultpasswords: True
 
