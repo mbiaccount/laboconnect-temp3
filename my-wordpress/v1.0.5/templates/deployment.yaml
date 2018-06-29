@@ -12,6 +12,11 @@ spec:
     ports:
     - name: init
       containerPort: 6060
+    env:
+    - name: VERSION_LABO
+      value: {{.Values.VersionLaboconnect}}
+    - name: VERSION_LABO_TAR
+      value: {{.Values.VersionLaboconnect}}.tar.bz2
     volumeMounts:
     - mountPath: /tmp
       name: archive
