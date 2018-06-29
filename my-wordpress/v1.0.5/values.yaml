@@ -44,7 +44,7 @@ externalDatabase:
 
 defaultpasswords: True
 
-mariadb:
+postgres:
   repository: docker-01.progi.loc:5000/dev/postgres-lc
   tag: latest
   pullPolicy: IfNotPresent

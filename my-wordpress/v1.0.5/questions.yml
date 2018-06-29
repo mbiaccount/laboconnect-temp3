@@ -33,13 +33,13 @@ questions:
     label: tag HTTPD
 #----------------------------------------------postgres--------------------------------------------------------------
   - group: "Images"
-    variable: mariadb.repository
+    variable: postgres.repository
     default: "docker-01.progi.loc:5000/dev/postgres-lc"
     description: "POSTGRES"
     type: string
     label: image POSTGRES 
   - group: "Images"
-    variable: mariadb.tag
+    variable: postgres.tag
     default: "latest"
     description: "MariaDB image tag"
     type: string
@@ -61,32 +61,32 @@ questions:
 - group: "frontal web settings"
   variable: nodePorts.https
   default: "30443"
-  description: "port you use to access application (browser)"
+  description: "Port sur lequel on expose le service HTTPD"
   type: string
-  label: Access port
-- group: "frontal web settings"
-  variable: serviceType
-  default: "NodePort"
-  description: "nobody understand"
-  type: string
-  label: NodePort for external endpoint
+  label: port à usage unique
+#- group: "frontal web settings"
+#  variable: serviceType
+#  default: "NodePort"
+#  description: "nobody understand"
+#  type: string
+#  label: NodePort for external endpoint
 - group: "frontal web settings"
   variable: node
   default: "docker-01"
-  description: "Node that support the module; It will also serve as your http host variable."
+  description: "Node supportant le déploiement"
   type: enum
   options:
     - "kubernetes-01"
     - "docker-01"
-  label: Node you're working on
+  label: Hôte
 
 # POSTGRES SETTING -------------------------------------------------------------------------------------------------
 - group: "database settings"
   variable: postgres.port
   default: "5433"
-  description: "postgres port"
+  description: "port POSTGRES"
   type: string
-  label: Access port
+  label: Port d'accès
 
 - variable: defaultpasswords
   default: "true"

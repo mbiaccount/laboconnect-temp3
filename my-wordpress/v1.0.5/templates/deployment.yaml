@@ -81,12 +81,12 @@ spec:
   initContainers:
   - name: init-postgres
     image: {{.Values.imglight}} 
-    imagePullPolicy: {{ .Values.mariadb.pullPolicy | quote }}
+    imagePullPolicy: {{ .Values.postgres.pullPolicy | quote }}
     command: [ 'sh', '-c', 'sleep 45' ]
   containers:
   - name: postgres
-    image: "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
-    imagePullPolicy: {{ .Values.mariadb.pullPolicy | quote }}
+    image: "{{.Values.postgres.repository}}:{{.Values.postgres.tag}}"
+    imagePullPolicy: {{ .Values.postgres.pullPolicy | quote }}
     ports:
     - name: postgres
       containerPort: 5432
