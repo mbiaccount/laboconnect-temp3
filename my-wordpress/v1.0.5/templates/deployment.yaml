@@ -23,7 +23,7 @@ spec:
       path: /home/dlsante/volumes/archive
   - name: arbo
     hostPath:
-      path: /home/dlsante/volumes/laboconnect/
+      path: /home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}
 #  ---------------------------------------------------------------------------------------------------------
 ---
 apiVersion: v1
@@ -114,8 +114,8 @@ spec:
       mountPath: /etc/localtime
     - name: zoneinfo
       mountPath: /usr/share/zoneinfo
-    - name: postgresql
-      mountPath: /var/lib/pgsql/data
+#    - name: postgresql
+#      mountPath: /var/lib/pgsql/data
   nodeSelector:
     kubernetes.io/hostname: {{ .Values.node }}
   {{- if .Values.httpd.pullSecrets }}
@@ -131,9 +131,9 @@ spec:
   - hostPath:
       path: "/usr/share/zoneinfo"
     name: zoneinfo
-  - hostPath:
-      path: {{.Values.arb}}dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/postgresql
-    name: postgresql
+#  - hostPath:
+#      path: {{.Values.arb}}dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/postgresql
+#    name: postgresql
 ---
 kind: Pod
 apiVersion: v1
