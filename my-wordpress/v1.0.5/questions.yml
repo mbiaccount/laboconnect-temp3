@@ -2,44 +2,61 @@ categories:
 - Blog
 - CMS
 questions:
-- group: "Images"
-  variable: httpd.repository
-  default: "docker-01.progi.loc:5000/dev/httpd-lc2"
-  description: "HTTPD image"
-  type: string
-  label: HTTPD Image Name
-- group: "Images"
-  variable: httpd.tag
-  default: "latest"
-  description: "WordPress image tag"
-  type: string
-  label: HTTPD Image Tag
+
+- variable: defaultimages
+  default: "true" 
+  description: "Utilisation des images par défaut"
+  label: 
+  type: boolean
+  show_subquestion_if: false
+  group: "Images"
+  subquestions:
+# ------------------------------------------------Image-Init---------------------------------------------------------
+  - group: "Images"
+    variable: imglight 
+    default: "rhel7/rhel-atomic"
+    description: "Images des conteneurs d'initialisation"
+    type: string
+    label: utiliser l'image par défaut en cas de doute
+#------------------------------------------------HTTPD---------------------------------------------------------------
+  - group: "Images"
+    variable: httpd.repository
+    default: "docker-01.progi.loc:5000/dev/httpd-lc2"
+    description: "HTTPD"
+    type: string
+    label: Image HTTPD
+  - group: "Images"
+    variable: httpd.tag
+    default: "latest"
+    description: "WordPress image tag"
+    type: string
+    label: tag HTTPD
 #----------------------------------------------postgres--------------------------------------------------------------
-- group: "Images"
-  variable: mariadb.repository
-  default: "docker-01.progi.loc:5000/dev/postgres-lc"
-  description: "POSTGRES image name"
-  type: string
-  label: POSTGRES image name
-- group: "Images"
-  variable: mariadb.tag
-  default: "latest"
-  description: "MariaDB image tag"
-  type: string
-  label: POSTGRES Image Tag
+  - group: "Images"
+    variable: mariadb.repository
+    default: "docker-01.progi.loc:5000/dev/postgres-lc"
+    description: "POSTGRES"
+    type: string
+    label: image POSTGRES 
+  - group: "Images"
+    variable: mariadb.tag
+    default: "latest"
+    description: "MariaDB image tag"
+    type: string
+    label: tag POSTGRES
 #---------------------------------------------Jboss------------------------------------------------------------------
-- group: "Images"
-  variable: jboss.repository
-  default: "docker-01.progi.loc:5000/dev/laboconnect"
-  description: "laboconnect image name"
-  type: string
-  label: laboconnect image name
-- group: "Images"
-  variable: jboss.tag
-  default: "LC03.06mbi"
-  description: "laboconnect image tag"
-  type: string
-  label: Jboss Image Tag
+  - group: "Images"
+    variable: jboss.repository
+    default: "docker-01.progi.loc:5000/dev/laboconnect"
+    description: "JBoss"
+    type: string
+    label: image Jboss
+  - group: "Images"
+    variable: jboss.tag
+    default: "LC03.06mbi"
+    description: "laboconnect image tag"
+    type: string
+    label: tag Jboss
 #---------------------------------------- HTTPD SETTING -------------------------------------------------------------
 - group: "frontal web settings"
   variable: nodePorts.https
@@ -106,12 +123,15 @@ questions:
 - group: "volumes"
   variable: VersionLaboconnect 
   default: "LC03.06"
-  description: "Version that your paths will use"
-  type: string
-  label: LaboConnect Version
+  description: "Version des sources"
+  type: enum
+    - "LC03.03"
+    - "LC03.05"
+    - "LC03.06"
+  label: Version de LaboConnect (fichiers)
 - group: "volumes"
   variable: arb
-  default: "/home/"
-  description: "beginig of your relative path"
+  default: "/home/dlsante/volumes/laboconnect/"
+  description: "répertoire contenant les fichiers initiaux"
   type: string
-  label: Father Directory of your volumes
+  label: Repertoire

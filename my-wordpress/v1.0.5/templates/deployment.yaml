@@ -80,10 +80,9 @@ metadata:
 spec:
   initContainers:
   - name: init-postgres
-    #image:  "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
-    image: rhel7/rhel-atomic
+    image: {{.Values.imglight}} 
     imagePullPolicy: {{ .Values.mariadb.pullPolicy | quote }}
-    command: [ 'sh', '-c', 'sleep 55' ]
+    command: [ 'sh', '-c', 'sleep 45' ]
   containers:
   - name: postgres
     image: "{{ .Values.mariadb.repository }}:{{ .Values.mariadb.tag }}"
@@ -145,8 +144,8 @@ metadata:
 spec:
   initContainers:
   - name: init-jboss
-    image:  "{{ .Values.jboss.repository }}:{{ .Values.jboss.tag }}"
-    command: [ 'sh', '-c', 'sleep 95']
+    image: {{.Values.imglight}}
+    command: [ 'sh', '-c', 'sleep 75']
   containers:
   - name: jboss
     image: "{{ .Values.jboss.repository }}:{{ .Values.jboss.tag }}"
@@ -206,7 +205,7 @@ spec:
       path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/messages/
   - name: jboss-controller-log
     hostPath:
-      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-controller-log/
+      path: {{.Values.arb}}{{.Values.VersionLaboconnect}}/jboss-controller-log/
   - name: jboss-log
     hostPath:
       path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/jboss-log
@@ -218,7 +217,7 @@ spec:
       path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/properties
   - name: sql
     hostPath:
-      path: {{.Values.arb}}/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}/sql
+      path: {{.Values.arb}}{{.Values.VersionLaboconnect}}/sql
   - name: zoneinfo
     hostPath:
       path: /usr/share/zoneinfo
