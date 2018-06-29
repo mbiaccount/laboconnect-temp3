@@ -2,11 +2,10 @@ categories:
 - Blog
 - CMS
 questions:
-
 - variable: numb
   default: "1"
-  description: Numéro du déploiement
-  type: String
+  description: "Numéro du déploiement"
+  type: string
   group: "Déploiement"
 # -------------------------------------------------------------------------------------------------------------------
 - variable: defaultimages
