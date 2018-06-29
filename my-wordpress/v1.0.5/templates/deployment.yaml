@@ -163,6 +163,8 @@ spec:
     - name: postgres
       containerPort: 7070
     env:
+    - name: NUMB
+      value: {{.Values.numb}}
     - name: HTTPD_VHOST
       value: {{ .Values.node }}
     - name: BDD_HOST
