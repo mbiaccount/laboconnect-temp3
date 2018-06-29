@@ -125,6 +125,7 @@ questions:
   default: "LC03.06"
   description: "Version des sources"
   type: enum
+  options:
     - "LC03.03"
     - "LC03.05"
     - "LC03.06"
