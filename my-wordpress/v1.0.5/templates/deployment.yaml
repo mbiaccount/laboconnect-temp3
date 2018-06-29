@@ -23,7 +23,7 @@ spec:
       path: /home/dlsante/volumes/archive
   - name: arbo
     hostPath:
-      path: /home/dlsante/volumes/laboconnect/{{.Values.VersionLaboconnect}}
+      path: /home/dlsante/volumes/laboconnect/
 #  ---------------------------------------------------------------------------------------------------------
 ---
 apiVersion: v1
