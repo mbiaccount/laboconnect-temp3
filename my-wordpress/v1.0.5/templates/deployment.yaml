@@ -59,7 +59,7 @@ spec:
       value: {{ .Values.node }}
     envFrom:
     - secretRef:
-        name: envfile
+        name: envfile{{.Values.numb}}
     volumeMounts:
     - mountPath: /etc/localtime
       name: localtime
@@ -113,7 +113,7 @@ spec:
       value: {{.Values.pass_rw }}
     envFrom:
     - secretRef:
-        name: envfile
+        name: envfile{{.Values.numb}}
     volumeMounts:
     - name: localtime
       mountPath: /etc/localtime
@@ -176,7 +176,7 @@ spec:
       value: {{.Values.pass_mss_rw }}
     envFrom:
     - secretRef:
-        name: envfile
+        name: envfile{{.Values.numb}}
     volumeMounts:
     - mountPath: "/etc/localtime"
       name: localtime
