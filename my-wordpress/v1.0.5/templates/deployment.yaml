@@ -164,8 +164,8 @@ spec:
       containerPort: 7070
     env:
     - name: NUMB
-      value: 1
-      #value: {{ .Values.numb }}
+      #value: 1
+      value: "{{ .Values.numb }}"
     - name: HTTPD_VHOST
       value: {{ .Values.node }}
     - name: BDD_HOST
