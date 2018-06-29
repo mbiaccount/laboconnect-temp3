@@ -12,7 +12,7 @@ spec:
     #nodePort: 
     targetPort: 6060
   selector:
-    app: init
+    app: init{{.Values.numb}}
 ---
 apiVersion: v1
 kind: Service
@@ -32,7 +32,7 @@ spec:
       nodePort: {{ .Values.nodePorts.https }}
       {{- end }}
   selector:
-    app: LaboConnect
+    app: LaboConnect{{.Values.numb}}0
 #    app: {{ template "fullname" . }}
 #    app: LaboConnect
 ---
@@ -54,7 +54,7 @@ spec:
     nodePort: {{ .Values.nodePorts.postgres }}
     targetPort: 5432
   selector:
-    app: LaboConnect2
+    app: LaboConnect{{.Values.numb}}2
 ---
 apiVersion: v1
 kind: Service
@@ -74,5 +74,5 @@ spec:
 #    nodePort: {{ .Values.nodePorts.postgres }}
     targetPort: 7070
   selector:
-    app: LaboConnect3
+    app: LaboConnect{{.Values.numb}}3
 #

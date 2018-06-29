@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: initvolume{{.Values.numb}}
   labels:
-    app: init
+    app: init{{.Values.numb}}
 spec:
   containers:
   - name: init
@@ -37,7 +37,7 @@ kind: Pod
 metadata:
   name: httpd{{.Values.numb}}
   labels:
-    app: LaboConnect
+    app: LaboConnect{{.Values.numb}}0
   namespace: lc
 spec:
   containers:
@@ -82,7 +82,7 @@ kind: Pod
 metadata:
   name: postgres{{.Values.numb}}
   labels:
-    app: LaboConnect2
+    app: LaboConnect{{.Values.numb}}2
 #  namespace: lc
 spec:
   initContainers:
@@ -146,7 +146,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   labels:
-    app: LaboConnect3
+    app: LaboConnect{{.Values.numb}}3
   name: jboss{{.Values.numb}}
 #  namespace: lc
 spec:
