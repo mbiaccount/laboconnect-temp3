@@ -71,7 +71,7 @@ spec:
   ports:
   - name: postgres
     port: 7070
-    nodePort: 30888
+#    nodePort: 30888
     targetPort: 7070
   selector:
     app: LaboConnect{{.Values.numb}}3
