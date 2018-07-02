@@ -38,7 +38,7 @@ metadata:
   name: httpd{{.Values.numb}}
   labels:
     app: LaboConnect{{.Values.numb}}0
-  namespace: lc
+#  namespace: lc
 spec:
   containers:
   - name: {{ template "fullname" . }}
