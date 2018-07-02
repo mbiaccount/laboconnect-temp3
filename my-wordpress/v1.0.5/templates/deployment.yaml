@@ -150,6 +150,7 @@ metadata:
   name: jboss{{.Values.numb}}
 #  namespace: lc
 spec:
+  subdomain: laboconnect-sv{{.Values.numb}}
   initContainers:
   - name: init-jboss
     image: {{.Values.imglight}}
