@@ -52,6 +52,8 @@ spec:
     - name: modcluster
       containerPort: 6666
     env:
+    - name: NUMB
+      value: "{{ .Values.numb }}"
     - name: HTTPD_VHOST
       value: {{ .Values.node }}
     - name: BDD_HOST
