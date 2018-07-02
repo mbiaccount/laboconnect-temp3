@@ -9,7 +9,8 @@ spec:
   - name: init
     image: rhel7/rhel-atomic
     imagePullPolicy: {{ .Values.httpd.pullPolicy | quote }}
-    command: [ 'sh', '-c', 'sleep 2; microdnf --enablerepo=rhel-7-server-rpms  install -y tar; tar -xvf /tmp/{{.Values.VersionLaboconnect}}.tar.bz2; mv /{{.Values.VersionLabocoonect}} /tmp/back' ]
+    command: [ 'sh', '-c', 'sleep 2; microdnf --enablerepo=rhel-7-server-rpms  install -y tar']
+#; tar -xvf /tmp/{{.Values.VersionLaboconnect}}.tar.bz2; mv /{{.Values.VersionLabocoonect}} /tmp/back' ]
     command: [ 'sh', '-c', 'sleep 60']
     ports:
     - name: init
