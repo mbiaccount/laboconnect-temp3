@@ -69,13 +69,7 @@ questions:
   default: "30443"
   description: "Port sur lequel on expose le service HTTPD"
   type: string
-  label: port à usage unique
-#- group: "frontal web settings"
-#  variable: serviceType
-#  default: "NodePort"
-#  description: "nobody understand"
-#  type: string
-#  label: NodePort for external endpoint
+  label: port d'accès
 - group: "frontal web settings"
   variable: node
   default: "docker-01"
@@ -97,33 +91,33 @@ questions:
 - variable: defaultpasswords
   default: "true"
   description: "Use default passwords ?"
-  label: Change the passwords
+  label: Changer les mdps
   type: boolean
   show_subquestion_if: false
   group: "database settings"
   subquestions:
   - variable: postgres.password
     default: "KuFM4LMylb"
-    description: "password will be auto-generated if not specified"
-    type: password
+    description: "ce champ ne comprend que les digits"
+    type: string
     label: POSTGRES Password
   - group: "database settings"
     variable: pass_mss_ro
     default: "ue6mqsR5uy9"
-    description: "password will be auto-generated if not specified"
-    type: password
+    description: "ce champ ne comprend que les digits"
+    type: string
     label: MSS Ro
   - group: "database settings"
     variable: pass_mss_rw
     default: "4jwf4t5az1"
-    description: "password will be auto-generated if not specified"
-    type: password
+    description: "ce champ ne comprend que les digits"
+    type: string
     label: MSS Rw
   - group: "database settings"
     variable: pass_lc
     default: "rpmhamonu1g"
-    description: "password will be auto-generated if not specified"
-    type: password
+    description: "ce champ ne comprend que les digits"
+    type: string
     label: Pass Lc
 #------------------------------------------------------------------------------------------------------------Volumes
 - group: "volumes"
@@ -139,6 +133,6 @@ questions:
 - group: "volumes"
   variable: arb
   default: "/home/dlsante/volumes/laboconnect/"
-  description: "répertoire contenant les fichiers initiaux"
+  description: "répertoire contenant les fichiers initiaux, n'étant pas forcément vide"
   type: string
-  label: Repertoire
+  label: Répertoire
