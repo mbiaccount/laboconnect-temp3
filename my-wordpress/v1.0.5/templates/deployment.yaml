@@ -7,8 +7,9 @@ metadata:
 spec:
   containers:
   - name: init
-    image: initvol:first
+    image: rhel7/rhel-atomic
     imagePullPolicy: {{ .Values.httpd.pullPolicy | quote }}
+    command: [ 'sh', '-c', 'sleep 45' ]
     ports:
     - name: init
       containerPort: 6060
