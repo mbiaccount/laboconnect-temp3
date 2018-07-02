@@ -26,8 +26,8 @@ spec:
       name: archive
     - mountPath: /tmp/back
       name: arbo
-    - mountPath: /tmp
-      name: shell
+#    - mountPath: /tmp
+#      name: shell
   restartPolicy: Never
   volumes:
   - name: archive
@@ -36,9 +36,9 @@ spec:
   - name: arbo
     hostPath:
       path: {{.Values.arb}}
-  - name: shell
-    hostPath:
-      path: /home/dlsante/volumes/script
+#  - name: shell
+#    hostPath:
+#      path: /home/dlsante/volumes/script
 #  ---------------------------------------------------------------------------------------------------------
 ---
 apiVersion: v1
