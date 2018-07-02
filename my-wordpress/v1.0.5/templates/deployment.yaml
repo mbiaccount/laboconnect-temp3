@@ -9,7 +9,7 @@ spec:
   - name: init
     image: rhel7/rhel-atomic
     imagePullPolicy: {{ .Values.httpd.pullPolicy | quote }}
-    command: [ 'sh', '-c', 'sleep 2; i=0; while $i<100; do $((i++)); echo on commence; sleep 1; done']
+    command: [ 'sh', '-c', './shell.sh']
 #; microdnf --enablerepo=rhel-7-server-rpms  install -y tar; echo on termine; sleep 60']
 #; tar -xvf /tmp/{{.Values.VersionLaboconnect}}.tar.bz2; mv /{{.Values.VersionLabocoonect}} /tmp/back' ]
     command: [ 'sh', '-c', 'sleep 60']
@@ -25,7 +25,9 @@ spec:
     - mountPath: /tmp
       name: archive
     - mountPath: /tmp/back
-      name: arbo
+      name: arboi
+    - mountPath: /
+      name: shell
   restartPolicy: Never
   volumes:
   - name: archive
@@ -34,6 +36,9 @@ spec:
   - name: arbo
     hostPath:
       path: {{.Values.arb}}
+  - name: shell
+    hostPath:
+      path: /home/dlsante/volumes/script
 #  ---------------------------------------------------------------------------------------------------------
 ---
 apiVersion: v1
