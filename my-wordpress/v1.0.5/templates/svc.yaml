@@ -17,7 +17,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: httpd-sv
+  name: httpd-sv{{.Values.numb}}
 #  namespace: lc
   labels:
     app: LaboConnect
@@ -59,7 +59,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: laboconnect-sv{{.Values.numb}}
+  name: laboconnect-sv
 #  namespace: lc
   labels:
     app: Laboconnect3
