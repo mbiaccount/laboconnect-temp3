@@ -27,7 +27,7 @@ questions:
 #------------------------------------------------HTTPD---------------------------------------------------------------
   - group: "Images"
     variable: httpd.repository
-    default: "docker-01.progi.loc:5000/dev/httpd-lc2"
+    default: "docker-01.progi.loc:5000/dev/httpd-lc4"
     description: "HTTPD"
     type: string
     label: Image HTTPD
