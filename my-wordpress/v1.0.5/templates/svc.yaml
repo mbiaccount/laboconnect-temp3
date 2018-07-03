@@ -31,7 +31,7 @@ spec:
 #      {{- if (and (eq .Values.serviceType "NodePort") (not (empty .Values.nodePorts.https)))}}
 #      {{- if eq .Values.numb "1" }}
 #      nodePort: {{ .Values.nodePorts.https }}
-      nodePort: 30 + 443
+#      nodePort: 30 + 443
 #      {{- end }}
 #      {{- if eq .Values.numb "2" }}
       nodePort: 30444
