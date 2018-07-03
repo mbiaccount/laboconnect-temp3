@@ -5,7 +5,18 @@ questions:
 - variable: numb
   default: "1"
   description: "Numéro du déploiement"
-  type: string
+  type: enum
+  options:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
   group: "Déploiement"
   label: saisir un chiffre
 # -------------------------------------------------------------------------------------------------------------------
