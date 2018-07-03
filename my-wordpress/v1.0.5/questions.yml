@@ -135,4 +135,4 @@ questions:
   default: "/home/dlsante/volumes/laboconnect/"
   description: "répertoire contenant les fichiers initiaux, n'étant pas forcément vide"
   type: string
-  label: "Répertoire complet:/...path.../Numéro_déploiement"
+  label: "Répertoire complet: /...path.../Numéro_déploiement"
