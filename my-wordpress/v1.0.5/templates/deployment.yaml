@@ -26,8 +26,6 @@ spec:
       name: archive
     - mountPath: /tmp/back
       name: arbo
-#    - mountPath: /tmp
-#      name: shell
   restartPolicy: Never
   volumes:
   - name: archive
@@ -36,57 +34,54 @@ spec:
   - name: arbo
     hostPath:
       path: {{.Values.arb}}{{.Values.numb}}
-#  - name: shell
-#    hostPath:
-#      path: /home/dlsante/volumes/script
 #  ---------------------------------------------------------------------------------------------------------
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: httpd{{.Values.numb}}
-  labels:
-    app: LaboConnect{{.Values.numb}}0
-#  namespace: lc
-spec:
-  containers:
-  - name: {{ template "fullname" . }}
-    image: "{{ .Values.httpd.repository }}:{{ .Values.httpd.tag }}"
-#    imagePullPolicy: {{ .Values.httpd.pullPolicy | quote }}
-    imagePullPolicy: Always
-    ports:
-    - name: https
-      containerPort: 443
-      protocol: TCP
-    - name: modcluster
-      containerPort: 6666
-    env:
-    - name: NUMB
-      value: "{{ .Values.numb }}"
-    - name: HTTPD_VHOST
-      value: {{ .Values.node }}
-    - name: BDD_HOST
-      value: {{ .Values.node }}
-    - name: JBOSS_HOST
-      value: {{ .Values.node }}
-    envFrom:
-    - secretRef:
-        name: envfile{{.Values.numb}}
-    volumeMounts:
-    - mountPath: /etc/localtime
-      name: localtime
-  nodeSelector:
-    kubernetes.io/hostname: {{ .Values.node }}
-  {{- if .Values.httpd.pullSecrets }}
-  imagePullSecrets:
-  {{- range .Values.httpd.pullSecrets }}
-    - name: {{ . }}
-  {{- end}}
-  {{- end }}
-  volumes:
-  - name: localtime
-    hostPath:
-      path: /etc/localtime
+#---
+#apiVersion: v1
+#kind: Pod
+#metadata:
+#  name: httpd{{.Values.numb}}
+#  labels:
+#    app: LaboConnect{{.Values.numb}}0
+##  namespace: lc
+#spec:
+#  containers:
+#  - name: {{ template "fullname" . }}
+#    image: "{{ .Values.httpd.repository }}:{{ .Values.httpd.tag }}"
+##    imagePullPolicy: {{ .Values.httpd.pullPolicy | quote }}
+#    imagePullPolicy: Always
+#    ports:
+#    - name: https
+#      containerPort: 443
+#      protocol: TCP
+#    - name: modcluster
+#      containerPort: 6666
+#    env:
+#    - name: NUMB
+#      value: "{{ .Values.numb }}"
+#    - name: HTTPD_VHOST
+#      value: {{ .Values.node }}
+#    - name: BDD_HOST
+#      value: {{ .Values.node }}
+#    - name: JBOSS_HOST
+#      value: {{ .Values.node }}
+#    envFrom:
+#    - secretRef:
+#        name: envfile{{.Values.numb}}
+#    volumeMounts:
+#    - mountPath: /etc/localtime
+#      name: localtime
+#  nodeSelector:
+#    kubernetes.io/hostname: {{ .Values.node }}
+#  {{- if .Values.httpd.pullSecrets }}
+#  imagePullSecrets:
+#  {{- range .Values.httpd.pullSecrets }}
+#    - name: {{ . }}
+#  {{- end}}
+#  {{- end }}
+#  volumes:
+#  - name: localtime
+#    hostPath:
+#      path: /etc/localtime
 ---
 apiVersion: v1
 kind: Pod
@@ -106,7 +101,6 @@ spec:
     image: "{{.Values.postgres.repository}}:{{.Values.postgres.tag}}"
 #    imagePullPolicy: {{ .Values.postgres.pullPolicy | quote }}
     imagePullPolicy: Always
-#    command: [ 'sh', '-c', 'sleep 70']
     ports:
     - name: postgres
       containerPort: 5432
@@ -172,7 +166,6 @@ spec:
     image: "{{ .Values.jboss.repository }}:{{ .Values.jboss.tag }}"
 #    imagePullPolicy: {{ .Values.jboss.pullPolicy | quote }}
     imagePullPolicy: Always
-#    command: [ 'sh', '-c', 'sleep 93']
     ports:
     - name: postgres
       containerPort: 7070
