@@ -100,7 +100,7 @@ spec:
   - name: init-postgres
     image: {{.Values.imglight}} 
     imagePullPolicy: {{ .Values.postgres.pullPolicy | quote }}
-    command: [ 'sh', '-c', 'sleep 45' ]
+    command: [ 'sh', '-c', 'sleep 55' ]
   containers:
   - name: postgres
     image: "{{.Values.postgres.repository}}:{{.Values.postgres.tag}}"
@@ -165,7 +165,7 @@ spec:
   initContainers:
   - name: init-jboss
     image: {{.Values.imglight}}
-    command: [ 'sh', '-c', 'sleep 65']
+    command: [ 'sh', '-c', 'sleep 80']
   containers:
   - name: jboss
     image: "{{ .Values.jboss.repository }}:{{ .Values.jboss.tag }}"
