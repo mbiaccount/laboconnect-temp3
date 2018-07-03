@@ -83,7 +83,7 @@ spec:
 #    hostPath:
 #      path: /etc/localtime
 ---
-apiVersion: v1
+yildllllfapiVersion: v1
 kind: Pod
 metadata:
   name: postgres{{.Values.numb}}
