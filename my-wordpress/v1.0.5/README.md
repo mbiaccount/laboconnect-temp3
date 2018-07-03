@@ -17,4 +17,4 @@ The actual deployment launch 3 modules which are:
 > **Postgres**: The Data Base.
 > **jBoss**: The LaboConnect application itself.
 
-You'll have to choose the access port of you frontal web. The app will be accessed by the following url : `https://<hostname|ip>:<port>`
+You'll have to choose the access port of you frontal web. The app will be accessed by the following url : `https://<hostname|ip>:3000X` whhere X is the deployment number
