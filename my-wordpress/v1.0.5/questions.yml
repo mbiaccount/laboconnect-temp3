@@ -132,7 +132,7 @@ questions:
   label: Version de LaboConnect (fichiers)
 - group: "volumes"
   variable: arb
-  default: "/home/dlsante/volumes/laboconnect/"
+  default: "/home/dlsante/volumes/laboconnect/{{.Values.numb}}"
   description: "répertoire contenant les fichiers initiaux, n'étant pas forcément vide"
   type: string
   label: Répertoire
