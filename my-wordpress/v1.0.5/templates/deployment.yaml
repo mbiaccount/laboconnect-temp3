@@ -194,18 +194,18 @@ spec:
     volumeMounts:
     - mountPath: "/etc/localtime"
       name: localtime
-#    - mountPath: /usr/labo/messages/
-#      name: messages
-#    - mountPath: /usr/labo/jboss-eap-6.1/domain/log/
-#      name: jboss-controller-log
-#    - mountPath: /usr/labo/jboss-eap-6.1/domain/servers/node1-main-server/log
-#      name: jboss-log
-#    - mountPath: /usr/labo/laboconnect/
-#      name: laboconnect
-#    - mountPath: /usr/labo/jboss-eap-6.1/modules/system/layers/base/fr/dlsante/settings/laboconnect/main
-#      name: properties
-#    - mountPath: /usr/labo/sql
-#      name: sql
+    - mountPath: /usr/labo/messages/
+      name: messages
+    - mountPath: /usr/labo/jboss-eap-6.1/domain/log/
+      name: jboss-controller-log
+    - mountPath: /usr/labo/jboss-eap-6.1/domain/servers/node1-main-server/log
+      name: jboss-log
+    - mountPath: /usr/labo/laboconnect/
+      name: laboconnect
+    - mountPath: /usr/labo/jboss-eap-6.1/modules/system/layers/base/fr/dlsante/settings/laboconnect/main
+      name: properties
+    - mountPath: /usr/labo/sql
+      name: sql
     - mountPath: "/usr/share/zoneinfo"
       name: zoneinfo
   nodeSelector:
@@ -220,23 +220,24 @@ spec:
   - name: localtime
     hostPath:
       path: /etc/localtime
-#  - name: messages
-#    hostPath:
-#      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/messages/
-#  - name: jboss-controller-log
-#    hostPath:
-#      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/jboss-controller-log/
-#  - name: jboss-log
-#      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/jboss-log
-#  - name: laboconnect
-#    hostPath:
-#      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/laboconnect/
-#  - name: properties
-#    hostPath:
-#      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/properties
-#  - name: sql
-#    hostPath:
-#      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/sql
+  - name: messages
+    hostPath:
+      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/messages/
+  - name: jboss-controller-log
+    hostPath:
+      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/jboss-controller-log/
+  - name: jboss-log
+    hostPath:
+      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/jboss-log
+  - name: laboconnect
+    hostPath:
+      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/laboconnect/
+  - name: properties
+    hostPath:
+      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/properties
+  - name: sql
+    hostPath:
+      path: {{.Values.arb}}{{.Values.numb}}/{{.Values.VersionLaboconnect}}/sql
   - name: zoneinfo
     hostPath:
       path: /usr/share/zoneinfo
