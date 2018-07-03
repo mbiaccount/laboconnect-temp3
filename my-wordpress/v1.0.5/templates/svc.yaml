@@ -28,8 +28,8 @@ spec:
       port: 443
       targetPort: 443
       nodePort: 30000
-   selector:
-     app: LaboConnect{{.Values.numb}}0
+    selector:
+      app: LaboConnect{{.Values.numb}}0
 #    app: {{ template "fullname" . }}
 #    app: LaboConnect
 ---
