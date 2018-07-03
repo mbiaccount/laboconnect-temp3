@@ -27,7 +27,7 @@ spec:
     - name: https
       port: 443
       targetPort: 443
-      nodePort: (( 400 and 43 ))
+      nodePort: "30000 + 443"
 #      {{- if (and (eq .Values.serviceType "NodePort") (not (empty .Values.nodePorts.https)))}}
 #      nodePort: (( {{ .Values.nodePorts.https }} {{ .Values.numb }} ))      
 #      {{- end }}
