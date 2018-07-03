@@ -73,4 +73,3 @@ spec:
     targetPort: 7070
   selector:
     app: LaboConnect{{.Values.numb}}3
-#
