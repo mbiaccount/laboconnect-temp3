@@ -24,16 +24,16 @@ spec:
     volumeMounts:
     - mountPath: /tmp
       name: archive
-    - mountPath: /tmp/back
-      name: arbo
+#    - mountPath: /tmp/back
+#      name: arbo
   restartPolicy: Never
   volumes:
   - name: archive
     hostPath:
       path: /home/dlsante/volumes/archive
-  - name: arbo
-    hostPath:
-      path: {{.Values.arb}}{{.Values.numb}}/
+#  - name: arbo
+#    hostPath:
+#      path: {{.Values.arb}}{{.Values.numb}}/
 #  ---------------------------------------------------------------------------------------------------------
 #---
 apiVersion: v1
