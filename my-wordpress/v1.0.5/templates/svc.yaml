@@ -29,32 +29,32 @@ spec:
       targetPort: 443
 #      nodePort: "30000 + 443"
 #      {{- if (and (eq .Values.serviceType "NodePort") (not (empty .Values.nodePorts.https)))}}
-      {{- if eq .Values.numb 1 }}
+      {{- if eq .Values.numb "1" }}
 #      nodePort: {{ .Values.nodePorts.https }}
       nodePort: 30443
       {{- end }}
-      {{- if eq .Values.numb 2 }}
+      {{- if eq .Values.numb "2" }}
       nodePort: 30444
       {{- end }}
-      {{- if eq .Values.numb 3 }}
+      {{- if eq .Values.numb "3" }}
       nodePort: 30445
       {{- end }}
-      {{- if eq .Values.numb 4 }}
+      {{- if eq .Values.numb "4" }}
       nodePort: 30446
       {{- end }}
-      {{- if eq .Values.numb 5 }}
+      {{- if eq .Values.numb "5" }}
       nodePort: 30447
       {{- end }}
-      {{- if eq .Values.numb 6 }}
+      {{- if eq .Values.numb "6" }}
       nodePort: 30448
       {{- end }}
-      {{- if eq .Values.numb 7 }}
+      {{- if eq .Values.numb "7" }}
       nodePort: 30449
       {{- end }}
-      {{- if eq .Values.numb 8 }}
+      {{- if eq .Values.numb "8" }}
       nodePort: 30500
       {{- end }}
-      {{- if eq .Values.numb 9 }}
+      {{- if eq .Values.numb "9" }}
       nodePort: 30501
       {{- end }}
 #      {{- end }}
