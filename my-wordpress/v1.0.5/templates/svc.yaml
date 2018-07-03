@@ -33,30 +33,30 @@ spec:
 #      nodePort: {{ .Values.nodePorts.https }}
       nodePort: 30 + 443
 #      {{- end }}
-      {{- if eq .Values.numb "2" }}
+#      {{- if eq .Values.numb "2" }}
       nodePort: 30444
-      {{- end }}
-      {{- if eq .Values.numb "3" }}
+#      {{- end }}
+#      {{- if eq .Values.numb "3" }}
       nodePort: 30445
-      {{- end }}
-      {{- if eq .Values.numb "4" }}
+#      {{- end }}
+#      {{- if eq .Values.numb "4" }}
       nodePort: 30446
-      {{- end }}
-      {{- if eq .Values.numb "5" }}
+#      {{- end }}
+#      {{- if eq .Values.numb "5" }}
       nodePort: 30447
-      {{- end }}
-      {{- if eq .Values.numb "6" }}
+#      {{- end }}
+#      {{- if eq .Values.numb "6" }}
       nodePort: 30448
-      {{- end }}
-      {{- if eq .Values.numb "7" }}
+#      {{- end }}
+#      {{- if eq .Values.numb "7" }}
       nodePort: 30449
-      {{- end }}
-      {{- if eq .Values.numb "8" }}
+#      {{- end }}
+#      {{- if eq .Values.numb "8" }}
       nodePort: 30500
-      {{- end }}
-      {{- if eq .Values.numb "9" }}
+#      {{- end }}
+#      {{- if eq .Values.numb "9" }}
       nodePort: 30501
-      {{- end }}
+#      {{- end }}
 #      {{- end }}
   selector:
     app: LaboConnect{{.Values.numb}}0
