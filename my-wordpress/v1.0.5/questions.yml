@@ -64,12 +64,12 @@ questions:
     type: string
     label: tag Jboss
 #---------------------------------------- HTTPD SETTING -------------------------------------------------------------
-- group: "frontal web settings"
-  variable: nodePorts.https
-  default: "30443"
-  description: "Port sur lequel on expose le service HTTPD, (non-réutilisable)"
-  type: string
-  label: port d'accès
+#- group: "frontal web settings"
+#  variable: nodePorts.https
+#  default: "30443"
+#  description: "Port sur lequel on expose le service HTTPD, (non-réutilisable)"
+#  type: string
+#  label: port d'accès
 - group: "frontal web settings"
   variable: node
   default: "docker-01"
@@ -81,12 +81,12 @@ questions:
   label: Hôte
 
 # POSTGRES SETTING -------------------------------------------------------------------------------------------------
-- group: "database settings"
-  variable: postgres.port
-  default: "5433"
-  description: "port POSTGRES"
-  type: string
-  label: Port d'accès
+#- group: "database settings"
+#  variable: postgres.port
+#  default: "5433"
+#  description: "port POSTGRES"
+#  type: string
+#  label: Port d'accès
 
 - variable: defaultpasswords
   default: "true"

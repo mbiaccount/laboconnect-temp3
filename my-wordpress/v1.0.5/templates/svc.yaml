@@ -48,7 +48,7 @@ spec:
   ports:
   - name: postgres
     port: 5432
-    nodePort: {{ .Values.nodePorts.postgres }}
+    nodePort: 543{{.Values.numb}}
     targetPort: 5432
   selector:
     app: LaboConnect{{.Values.numb}}2
