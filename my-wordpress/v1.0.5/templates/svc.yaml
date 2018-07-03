@@ -27,10 +27,9 @@ spec:
     - name: https
       port: 443
       targetPort: 443
-      {{ if eq .Values.numb "1.0" }}nodePort: 30443{{end}}  
-#      nodePort: ( "30" + "3" )
-  selector:
-    app: LaboConnect{{.Values.numb}}0
+      nodePort: 3000{{.Values.numb}}
+   selector:
+     app: LaboConnect{{.Values.numb}}0
 #    app: {{ template "fullname" . }}
 #    app: LaboConnect
 ---
