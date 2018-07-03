@@ -35,7 +35,7 @@ spec:
       path: /home/dlsante/volumes/archive
   - name: arbo
     hostPath:
-      path: {{.Values.arb}}/{{.Values.numb}}/
+      path: {{.Values.arb}}/{{.Values.numb}}
 #  - name: shell
 #    hostPath:
 #      path: /home/dlsante/volumes/script
